@@ -81,7 +81,7 @@
  */
 - (void)tgFooterViewDidClickedLoadBtn:(MJTgFooterView *)tgFooterView
 {
-#warning 正常开发:发送网络请求给远程的服务器
+    //TODO 正常开发:发送网络请求给远程的服务器
     // 1.添加更多的模型数据
     MJTg *tg = [[MJTg alloc] init];
     tg.icon = @"ad_01";
@@ -191,7 +191,7 @@
             return @"Unknown3";
     }
 
-    static NSString *CellIdentifier = @"Cell";
+    //static NSString *CellIdentifier = @"Cell";
     
     /*
     //初始化cell并指定其类型，也可自定义cell
@@ -279,7 +279,6 @@
         }else{
             return 44;
         }
-#warning 修改
     }else if (indexPath.section == 1) {
         return 44;
     }else if (indexPath.section == 2){
