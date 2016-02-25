@@ -190,7 +190,6 @@
 		08F8AE0818EA59E7001BEC6E /* View */ = {
 			isa = PBXGroup;
 			children = (
-				185956441C3F62560054C4AD /* Controller */,
 				08F8AE0418EA526D001BEC6E /* MJTgCell.h */,
 				08F8AE0518EA526D001BEC6E /* MJTgCell.m */,
 				08F8AE0218EA4F03001BEC6E /* MJTgCell.xib */,
@@ -231,13 +230,6 @@
 				08F8AE0718EA59DF001BEC6E /* Controller */,
 			);
 			name = Classes;
-			sourceTree = "<group>";
-		};
-		185956441C3F62560054C4AD /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
