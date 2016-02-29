@@ -31,6 +31,7 @@
 		08F8AE1C18EA917C001BEC6E /* MJTgHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8AE1B18EA917C001BEC6E /* MJTgHeaderView.m */; };
 		185956421C3F5A090054C4AD /* TableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 185956401C3F5A090054C4AD /* TableViewSelect.m */; };
 		185956431C3F5A090054C4AD /* TableViewSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185956411C3F5A090054C4AD /* TableViewSelect.xib */; };
+		EB814A131C83F8B900F0129C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB814A111C83F8B900F0129C /* Login.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		1859563F1C3F5A090054C4AD /* TableViewSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSelect.h; sourceTree = "<group>"; };
 		185956401C3F5A090054C4AD /* TableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSelect.m; sourceTree = "<group>"; };
 		185956411C3F5A090054C4AD /* TableViewSelect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSelect.xib; sourceTree = "<group>"; };
+		EB814A121C83F8B900F0129C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			isa = PBXGroup;
 			children = (
 				08F8ADD818EA4AED001BEC6E /* Main.storyboard */,
+				EB814A111C83F8B900F0129C /* Login.storyboard */,
 				08F8ADDE18EA4AED001BEC6E /* Images.xcassets */,
 				08F8AE0018EA4D42001BEC6E /* tgs.plist */,
 				08F8ADCE18EA4AED001BEC6E /* TableView-Info.plist */,
@@ -317,6 +320,7 @@
 				08F8ADDA18EA4AED001BEC6E /* Main.storyboard in Resources */,
 				08F8AE0D18EA5C24001BEC6E /* MJTgFooterView.xib in Resources */,
 				185956431C3F5A090054C4AD /* TableViewSelect.xib in Resources */,
+				EB814A131C83F8B900F0129C /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,6 +391,14 @@
 				08F8ADEF18EA4AED001BEC6E /* en */,
 			);
 			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		EB814A111C83F8B900F0129C /* Login.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EB814A121C83F8B900F0129C /* Base */,
+			);
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
