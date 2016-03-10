@@ -32,6 +32,7 @@
 		185956421C3F5A090054C4AD /* TableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 185956401C3F5A090054C4AD /* TableViewSelect.m */; };
 		185956431C3F5A090054C4AD /* TableViewSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185956411C3F5A090054C4AD /* TableViewSelect.xib */; };
 		EB814A131C83F8B900F0129C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB814A111C83F8B900F0129C /* Login.storyboard */; };
+		EBDFEB351C9192060056E240 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEB341C9192060056E240 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,8 @@
 		185956401C3F5A090054C4AD /* TableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSelect.m; sourceTree = "<group>"; };
 		185956411C3F5A090054C4AD /* TableViewSelect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSelect.xib; sourceTree = "<group>"; };
 		EB814A121C83F8B900F0129C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		EBDFEB331C9192060056E240 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EBDFEB341C9192060056E240 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +184,7 @@
 		08F8AE0718EA59DF001BEC6E /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				EBDFEB321C9192060056E240 /* MainVC */,
 				1859563F1C3F5A090054C4AD /* TableViewSelect.h */,
 				185956401C3F5A090054C4AD /* TableViewSelect.m */,
 				185956411C3F5A090054C4AD /* TableViewSelect.xib */,
@@ -233,6 +237,15 @@
 				08F8AE0718EA59DF001BEC6E /* Controller */,
 			);
 			name = Classes;
+			sourceTree = "<group>";
+		};
+		EBDFEB321C9192060056E240 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				EBDFEB331C9192060056E240 /* MainViewController.h */,
+				EBDFEB341C9192060056E240 /* MainViewController.m */,
+			);
+			path = MainVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,6 +355,7 @@
 				08F8ADD318EA4AED001BEC6E /* main.m in Sources */,
 				08F8AE1618EA6E50001BEC6E /* MJViewController.m in Sources */,
 				08F8AE0618EA526D001BEC6E /* MJTgCell.m in Sources */,
+				EBDFEB351C9192060056E240 /* MainViewController.m in Sources */,
 				08F8ADD718EA4AED001BEC6E /* MJAppDelegate.m in Sources */,
 				08F8ADFF18EA4BE0001BEC6E /* MJTg.m in Sources */,
 				08F8AE1C18EA917C001BEC6E /* MJTgHeaderView.m in Sources */,
