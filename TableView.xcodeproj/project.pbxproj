@@ -12,7 +12,6 @@
 		08F8ADCB18EA4AEC001BEC6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F8ADCA18EA4AEC001BEC6E /* UIKit.framework */; };
 		08F8ADD118EA4AED001BEC6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08F8ADCF18EA4AED001BEC6E /* InfoPlist.strings */; };
 		08F8ADD318EA4AED001BEC6E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8ADD218EA4AED001BEC6E /* main.m */; };
-		08F8ADD718EA4AED001BEC6E /* MJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8ADD618EA4AED001BEC6E /* MJAppDelegate.m */; };
 		08F8ADDA18EA4AED001BEC6E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 08F8ADD818EA4AED001BEC6E /* Main.storyboard */; };
 		08F8ADDF18EA4AED001BEC6E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F8ADDE18EA4AED001BEC6E /* Images.xcassets */; };
 		08F8ADE618EA4AED001BEC6E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F8ADE518EA4AED001BEC6E /* XCTest.framework */; };
@@ -20,21 +19,22 @@
 		08F8ADE818EA4AED001BEC6E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08F8ADCA18EA4AEC001BEC6E /* UIKit.framework */; };
 		08F8ADF018EA4AED001BEC6E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08F8ADEE18EA4AED001BEC6E /* InfoPlist.strings */; };
 		08F8ADF218EA4AED001BEC6E /* _1___Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8ADF118EA4AED001BEC6E /* _1___Tests.m */; };
-		08F8ADFF18EA4BE0001BEC6E /* MJTg.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8ADFE18EA4BE0001BEC6E /* MJTg.m */; };
 		08F8AE0118EA4D42001BEC6E /* tgs.plist in Resources */ = {isa = PBXBuildFile; fileRef = 08F8AE0018EA4D42001BEC6E /* tgs.plist */; };
-		08F8AE0318EA4F03001BEC6E /* MJTgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F8AE0218EA4F03001BEC6E /* MJTgCell.xib */; };
-		08F8AE0618EA526D001BEC6E /* MJTgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8AE0518EA526D001BEC6E /* MJTgCell.m */; };
-		08F8AE0D18EA5C24001BEC6E /* MJTgFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F8AE0C18EA5C24001BEC6E /* MJTgFooterView.xib */; };
-		08F8AE1018EA5F09001BEC6E /* MJTgFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8AE0F18EA5F09001BEC6E /* MJTgFooterView.m */; };
-		08F8AE1618EA6E50001BEC6E /* MJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8AE1518EA6E50001BEC6E /* MJViewController.m */; };
-		08F8AE1918EA905F001BEC6E /* MJTgHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F8AE1818EA905F001BEC6E /* MJTgHeaderView.xib */; };
-		08F8AE1C18EA917C001BEC6E /* MJTgHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08F8AE1B18EA917C001BEC6E /* MJTgHeaderView.m */; };
-		185956421C3F5A090054C4AD /* TableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = 185956401C3F5A090054C4AD /* TableViewSelect.m */; };
-		185956431C3F5A090054C4AD /* TableViewSelect.xib in Resources */ = {isa = PBXBuildFile; fileRef = 185956411C3F5A090054C4AD /* TableViewSelect.xib */; };
 		EB814A131C83F8B900F0129C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB814A111C83F8B900F0129C /* Login.storyboard */; };
 		EB87156D1C91B61A003C1361 /* baseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87156C1C91B61A003C1361 /* baseTableViewController.m */; };
-		EB8715701C91BBEB003C1361 /* MainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB87156F1C91BBEB003C1361 /* MainTableVC.m */; };
-		EBDFEB351C9192060056E240 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBDFEB341C9192060056E240 /* MainViewController.m */; };
+		EBF322851C9BA7180056C907 /* MJTg.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322811C9BA7180056C907 /* MJTg.m */; };
+		EBF322861C9BA7180056C907 /* MJAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322841C9BA7180056C907 /* MJAppDelegate.m */; };
+		EBF322911C9BA7270056C907 /* MJTgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322891C9BA7270056C907 /* MJTgCell.m */; };
+		EBF322921C9BA7270056C907 /* MJTgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF3228A1C9BA7270056C907 /* MJTgCell.xib */; };
+		EBF322931C9BA7270056C907 /* MJTgFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF3228C1C9BA7270056C907 /* MJTgFooterView.m */; };
+		EBF322941C9BA7270056C907 /* MJTgFooterView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF3228D1C9BA7270056C907 /* MJTgFooterView.xib */; };
+		EBF322951C9BA7270056C907 /* MJTgHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF3228F1C9BA7270056C907 /* MJTgHeaderView.m */; };
+		EBF322961C9BA7270056C907 /* MJTgHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF322901C9BA7270056C907 /* MJTgHeaderView.xib */; };
+		EBF322A31C9BA78A0056C907 /* MainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF3229A1C9BA78A0056C907 /* MainTableVC.m */; };
+		EBF322A41C9BA78A0056C907 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF3229C1C9BA78A0056C907 /* MainViewController.m */; };
+		EBF322A51C9BA78A0056C907 /* MJTableViewThreeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF3229E1C9BA78A0056C907 /* MJTableViewThreeVC.m */; };
+		EBF322A61C9BA78A0056C907 /* MJViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322A01C9BA78A0056C907 /* MJViewController.m */; };
+		EBF322A71C9BA78A0056C907 /* TableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322A21C9BA78A0056C907 /* TableViewSelect.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,8 +56,6 @@
 		08F8ADD018EA4AED001BEC6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08F8ADD218EA4AED001BEC6E /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		08F8ADD418EA4AED001BEC6E /* TableView-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "TableView-Prefix.pch"; sourceTree = "<group>"; };
-		08F8ADD518EA4AED001BEC6E /* MJAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MJAppDelegate.h; sourceTree = "<group>"; };
-		08F8ADD618EA4AED001BEC6E /* MJAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MJAppDelegate.m; sourceTree = "<group>"; };
 		08F8ADD918EA4AED001BEC6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		08F8ADDE18EA4AED001BEC6E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		08F8ADE418EA4AED001BEC6E /* TableView.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableView.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,31 +63,34 @@
 		08F8ADED18EA4AED001BEC6E /* TableViewTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TableViewTests-Info.plist"; sourceTree = "<group>"; };
 		08F8ADEF18EA4AED001BEC6E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08F8ADF118EA4AED001BEC6E /* _1___Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "_1___Tests.m"; sourceTree = "<group>"; };
-		08F8ADFD18EA4BE0001BEC6E /* MJTg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTg.h; sourceTree = "<group>"; };
-		08F8ADFE18EA4BE0001BEC6E /* MJTg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTg.m; sourceTree = "<group>"; };
 		08F8AE0018EA4D42001BEC6E /* tgs.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = tgs.plist; sourceTree = "<group>"; };
-		08F8AE0218EA4F03001BEC6E /* MJTgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgCell.xib; sourceTree = "<group>"; };
-		08F8AE0418EA526D001BEC6E /* MJTgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgCell.h; sourceTree = "<group>"; };
-		08F8AE0518EA526D001BEC6E /* MJTgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgCell.m; sourceTree = "<group>"; };
-		08F8AE0C18EA5C24001BEC6E /* MJTgFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgFooterView.xib; sourceTree = "<group>"; };
-		08F8AE0E18EA5F09001BEC6E /* MJTgFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgFooterView.h; sourceTree = "<group>"; };
-		08F8AE0F18EA5F09001BEC6E /* MJTgFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgFooterView.m; sourceTree = "<group>"; };
-		08F8AE1418EA6E50001BEC6E /* MJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJViewController.h; sourceTree = "<group>"; };
-		08F8AE1518EA6E50001BEC6E /* MJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJViewController.m; sourceTree = "<group>"; };
-		08F8AE1818EA905F001BEC6E /* MJTgHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgHeaderView.xib; sourceTree = "<group>"; };
-		08F8AE1A18EA917C001BEC6E /* MJTgHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgHeaderView.h; sourceTree = "<group>"; };
-		08F8AE1B18EA917C001BEC6E /* MJTgHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgHeaderView.m; sourceTree = "<group>"; };
-		1859563F1C3F5A090054C4AD /* TableViewSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSelect.h; sourceTree = "<group>"; };
-		185956401C3F5A090054C4AD /* TableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSelect.m; sourceTree = "<group>"; };
-		185956411C3F5A090054C4AD /* TableViewSelect.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewSelect.xib; sourceTree = "<group>"; };
 		EB814A121C83F8B900F0129C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		EB87156B1C91B61A003C1361 /* baseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseTableViewController.h; sourceTree = "<group>"; };
 		EB87156C1C91B61A003C1361 /* baseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseTableViewController.m; sourceTree = "<group>"; };
-		EB87156E1C91BBEB003C1361 /* MainTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableVC.h; sourceTree = "<group>"; };
-		EB87156F1C91BBEB003C1361 /* MainTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableVC.m; sourceTree = "<group>"; };
 		EB8715711C91BF15003C1361 /* ReturnCallBackDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReturnCallBackDelegate.h; sourceTree = "<group>"; };
-		EBDFEB331C9192060056E240 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
-		EBDFEB341C9192060056E240 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EBF322801C9BA7180056C907 /* MJTg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTg.h; sourceTree = "<group>"; };
+		EBF322811C9BA7180056C907 /* MJTg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTg.m; sourceTree = "<group>"; };
+		EBF322831C9BA7180056C907 /* MJAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJAppDelegate.h; sourceTree = "<group>"; };
+		EBF322841C9BA7180056C907 /* MJAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJAppDelegate.m; sourceTree = "<group>"; };
+		EBF322881C9BA7270056C907 /* MJTgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgCell.h; sourceTree = "<group>"; };
+		EBF322891C9BA7270056C907 /* MJTgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgCell.m; sourceTree = "<group>"; };
+		EBF3228A1C9BA7270056C907 /* MJTgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgCell.xib; sourceTree = "<group>"; };
+		EBF3228B1C9BA7270056C907 /* MJTgFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgFooterView.h; sourceTree = "<group>"; };
+		EBF3228C1C9BA7270056C907 /* MJTgFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgFooterView.m; sourceTree = "<group>"; };
+		EBF3228D1C9BA7270056C907 /* MJTgFooterView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgFooterView.xib; sourceTree = "<group>"; };
+		EBF3228E1C9BA7270056C907 /* MJTgHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgHeaderView.h; sourceTree = "<group>"; };
+		EBF3228F1C9BA7270056C907 /* MJTgHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgHeaderView.m; sourceTree = "<group>"; };
+		EBF322901C9BA7270056C907 /* MJTgHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgHeaderView.xib; sourceTree = "<group>"; };
+		EBF322991C9BA78A0056C907 /* MainTableVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableVC.h; sourceTree = "<group>"; };
+		EBF3229A1C9BA78A0056C907 /* MainTableVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableVC.m; sourceTree = "<group>"; };
+		EBF3229B1C9BA78A0056C907 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		EBF3229C1C9BA78A0056C907 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		EBF3229D1C9BA78A0056C907 /* MJTableViewThreeVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTableViewThreeVC.h; sourceTree = "<group>"; };
+		EBF3229E1C9BA78A0056C907 /* MJTableViewThreeVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTableViewThreeVC.m; sourceTree = "<group>"; };
+		EBF3229F1C9BA78A0056C907 /* MJViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJViewController.h; sourceTree = "<group>"; };
+		EBF322A01C9BA78A0056C907 /* MJViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJViewController.m; sourceTree = "<group>"; };
+		EBF322A11C9BA78A0056C907 /* TableViewSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSelect.h; sourceTree = "<group>"; };
+		EBF322A21C9BA78A0056C907 /* TableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSelect.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,61 +189,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		08F8AE0718EA59DF001BEC6E /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				EBDFEB321C9192060056E240 /* MainVC */,
-				1859563F1C3F5A090054C4AD /* TableViewSelect.h */,
-				185956401C3F5A090054C4AD /* TableViewSelect.m */,
-				185956411C3F5A090054C4AD /* TableViewSelect.xib */,
-				08F8AE1418EA6E50001BEC6E /* MJViewController.h */,
-				08F8AE1518EA6E50001BEC6E /* MJViewController.m */,
-			);
-			name = Controller;
-			sourceTree = "<group>";
-		};
-		08F8AE0818EA59E7001BEC6E /* View */ = {
-			isa = PBXGroup;
-			children = (
-				08F8AE0418EA526D001BEC6E /* MJTgCell.h */,
-				08F8AE0518EA526D001BEC6E /* MJTgCell.m */,
-				08F8AE0218EA4F03001BEC6E /* MJTgCell.xib */,
-				08F8AE0E18EA5F09001BEC6E /* MJTgFooterView.h */,
-				08F8AE0F18EA5F09001BEC6E /* MJTgFooterView.m */,
-				08F8AE0C18EA5C24001BEC6E /* MJTgFooterView.xib */,
-				08F8AE1A18EA917C001BEC6E /* MJTgHeaderView.h */,
-				08F8AE1B18EA917C001BEC6E /* MJTgHeaderView.m */,
-				08F8AE1818EA905F001BEC6E /* MJTgHeaderView.xib */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		08F8AE0918EA59F4001BEC6E /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				08F8ADFD18EA4BE0001BEC6E /* MJTg.h */,
-				08F8ADFE18EA4BE0001BEC6E /* MJTg.m */,
-			);
-			name = Model;
-			sourceTree = "<group>";
-		};
-		08F8AE0A18EA5A0B001BEC6E /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				08F8ADD518EA4AED001BEC6E /* MJAppDelegate.h */,
-				08F8ADD618EA4AED001BEC6E /* MJAppDelegate.m */,
-			);
-			name = Other;
-			sourceTree = "<group>";
-		};
 		08F8AE0B18EA5A1D001BEC6E /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				EBF322971C9BA78A0056C907 /* Controller */,
+				EBF322871C9BA7270056C907 /* View */,
+				EBF3227F1C9BA7180056C907 /* Model */,
+				EBF322821C9BA7180056C907 /* Other */,
 				EB8715691C91B5E1003C1361 /* BaseVC */,
-				08F8AE0A18EA5A0B001BEC6E /* Other */,
-				08F8AE0918EA59F4001BEC6E /* Model */,
-				08F8AE0818EA59E7001BEC6E /* View */,
-				08F8AE0718EA59DF001BEC6E /* Controller */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -265,13 +219,61 @@
 			path = BaseTableView;
 			sourceTree = "<group>";
 		};
-		EBDFEB321C9192060056E240 /* MainVC */ = {
+		EBF3227F1C9BA7180056C907 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				EBDFEB331C9192060056E240 /* MainViewController.h */,
-				EBDFEB341C9192060056E240 /* MainViewController.m */,
-				EB87156E1C91BBEB003C1361 /* MainTableVC.h */,
-				EB87156F1C91BBEB003C1361 /* MainTableVC.m */,
+				EBF322801C9BA7180056C907 /* MJTg.h */,
+				EBF322811C9BA7180056C907 /* MJTg.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EBF322821C9BA7180056C907 /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				EBF322831C9BA7180056C907 /* MJAppDelegate.h */,
+				EBF322841C9BA7180056C907 /* MJAppDelegate.m */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		EBF322871C9BA7270056C907 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EBF322881C9BA7270056C907 /* MJTgCell.h */,
+				EBF322891C9BA7270056C907 /* MJTgCell.m */,
+				EBF3228A1C9BA7270056C907 /* MJTgCell.xib */,
+				EBF3228B1C9BA7270056C907 /* MJTgFooterView.h */,
+				EBF3228C1C9BA7270056C907 /* MJTgFooterView.m */,
+				EBF3228D1C9BA7270056C907 /* MJTgFooterView.xib */,
+				EBF3228E1C9BA7270056C907 /* MJTgHeaderView.h */,
+				EBF3228F1C9BA7270056C907 /* MJTgHeaderView.m */,
+				EBF322901C9BA7270056C907 /* MJTgHeaderView.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EBF322971C9BA78A0056C907 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EBF322981C9BA78A0056C907 /* MainVC */,
+				EBF3229D1C9BA78A0056C907 /* MJTableViewThreeVC.h */,
+				EBF3229E1C9BA78A0056C907 /* MJTableViewThreeVC.m */,
+				EBF3229F1C9BA78A0056C907 /* MJViewController.h */,
+				EBF322A01C9BA78A0056C907 /* MJViewController.m */,
+				EBF322A11C9BA78A0056C907 /* TableViewSelect.h */,
+				EBF322A21C9BA78A0056C907 /* TableViewSelect.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EBF322981C9BA78A0056C907 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				EBF322991C9BA78A0056C907 /* MainTableVC.h */,
+				EBF3229A1C9BA78A0056C907 /* MainTableVC.m */,
+				EBF3229B1C9BA78A0056C907 /* MainViewController.h */,
+				EBF3229C1C9BA78A0056C907 /* MainViewController.m */,
 			);
 			path = MainVC;
 			sourceTree = "<group>";
@@ -324,6 +326,9 @@
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = itcast;
 				TargetAttributes = {
+					08F8ADC218EA4AEC001BEC6E = {
+						DevelopmentTeam = VD58PNDPW6;
+					};
 					08F8ADE318EA4AED001BEC6E = {
 						TestTargetID = 08F8ADC218EA4AEC001BEC6E;
 					};
@@ -354,13 +359,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F8ADDF18EA4AED001BEC6E /* Images.xcassets in Resources */,
-				08F8AE0318EA4F03001BEC6E /* MJTgCell.xib in Resources */,
+				EBF322961C9BA7270056C907 /* MJTgHeaderView.xib in Resources */,
+				EBF322921C9BA7270056C907 /* MJTgCell.xib in Resources */,
 				08F8AE0118EA4D42001BEC6E /* tgs.plist in Resources */,
 				08F8ADD118EA4AED001BEC6E /* InfoPlist.strings in Resources */,
-				08F8AE1918EA905F001BEC6E /* MJTgHeaderView.xib in Resources */,
+				EBF322941C9BA7270056C907 /* MJTgFooterView.xib in Resources */,
 				08F8ADDA18EA4AED001BEC6E /* Main.storyboard in Resources */,
-				08F8AE0D18EA5C24001BEC6E /* MJTgFooterView.xib in Resources */,
-				185956431C3F5A090054C4AD /* TableViewSelect.xib in Resources */,
 				EB814A131C83F8B900F0129C /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -380,17 +384,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EBF322A51C9BA78A0056C907 /* MJTableViewThreeVC.m in Sources */,
 				EB87156D1C91B61A003C1361 /* baseTableViewController.m in Sources */,
 				08F8ADD318EA4AED001BEC6E /* main.m in Sources */,
-				EB8715701C91BBEB003C1361 /* MainTableVC.m in Sources */,
-				08F8AE1618EA6E50001BEC6E /* MJViewController.m in Sources */,
-				08F8AE0618EA526D001BEC6E /* MJTgCell.m in Sources */,
-				EBDFEB351C9192060056E240 /* MainViewController.m in Sources */,
-				08F8ADD718EA4AED001BEC6E /* MJAppDelegate.m in Sources */,
-				08F8ADFF18EA4BE0001BEC6E /* MJTg.m in Sources */,
-				08F8AE1C18EA917C001BEC6E /* MJTgHeaderView.m in Sources */,
-				08F8AE1018EA5F09001BEC6E /* MJTgFooterView.m in Sources */,
-				185956421C3F5A090054C4AD /* TableViewSelect.m in Sources */,
+				EBF322A71C9BA78A0056C907 /* TableViewSelect.m in Sources */,
+				EBF322861C9BA7180056C907 /* MJAppDelegate.m in Sources */,
+				EBF322851C9BA7180056C907 /* MJTg.m in Sources */,
+				EBF322A41C9BA78A0056C907 /* MainViewController.m in Sources */,
+				EBF322951C9BA7270056C907 /* MJTgHeaderView.m in Sources */,
+				EBF322911C9BA7270056C907 /* MJTgCell.m in Sources */,
+				EBF322A61C9BA78A0056C907 /* MJViewController.m in Sources */,
+				EBF322A31C9BA78A0056C907 /* MainTableVC.m in Sources */,
+				EBF322931C9BA7270056C907 /* MJTgFooterView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,11 +529,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "01-团购/TableView-Prefix.pch";
 				INFOPLIST_FILE = "01-团购/TableView-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TableView;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -538,11 +546,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "01-团购/TableView-Prefix.pch";
 				INFOPLIST_FILE = "01-团购/TableView-Info.plist";
 				PRODUCT_BUNDLE_IDENTIFIER = "cn.itcast.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = TableView;
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

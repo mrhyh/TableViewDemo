@@ -7,9 +7,11 @@
 //
 
 #import "MainViewController.h"
+#import "MJTableViewThreeVC.h"
 
 @interface MainViewController ()
 
+- (IBAction)btnThree:(id)sender;
 @end
 
 @implementation MainViewController
@@ -24,14 +26,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+
+- (IBAction)btnThree:(id)sender {
+    
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Login" bundle:nil];
+    MJTableViewThreeVC *next = [story instantiateViewControllerWithIdentifier:@"MJTableViewThreeVCID"];
+    [self.navigationController pushViewController:next animated:YES];
 }
-*/
-
 @end
