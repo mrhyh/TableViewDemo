@@ -30,7 +30,7 @@
     //设定cell分行线颜色
     [self.tableView setSeparatorColor:[UIColor redColor]];
     //编辑tableView
-    self.tableView.editing=NO;
+    self.tableView.editing = NO;
     //跳到指的row or section
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                         atScrollPosition:UITableViewScrollPositionBottom animated:NO];
@@ -99,7 +99,7 @@
  */
 - (BOOL)prefersStatusBarHidden
 {
-    return YES;
+    return NO;
 }
 
 /**
@@ -144,15 +144,15 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     switch (section) {
         case 0:
-            return 1; //每个分区通常对应不同的数组，返回其元素个数来确定分区的行数
+            return 5; //每个分区通常对应不同的数组，返回其元素个数来确定分区的行数
             break;
             
         case 1:
-            return  2;
+            return  5;
             break;
             
         default:
-            return 0;
+            return 7;
             break;
     }
 }
@@ -188,7 +188,7 @@
         case 1:
             return @"section2";
         default:
-            return @"Unknown3";
+            return [NSString stringWithFormat:@"Unknown%ld",(long)section];
     }
 
     //static NSString *CellIdentifier = @"Cell";
@@ -234,7 +234,13 @@
 
 //用以定制自定义的section头部视图－Header
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-    return nil;
+    if(section == 1){
+        UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
+        headerView.backgroundColor = [UIColor cyanColor];
+        return headerView;
+    }else {
+        return nil;
+    }
 }
 
 
@@ -253,7 +259,7 @@
     return 15;//返回标题数组中元素的个数来确定分区的个数
 }
 
-//每个section底部标题高度（实现这个代理方法后前面 sectionHeaderHeight 设定的高度无效）
+//每个section底部标题高度（实现这个代理方法后前面 通过sectionHeaderHeight属性 设定的高度无效）
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if(section == 0){
@@ -264,7 +270,7 @@
     }
 }
 
-//每个section头部标题高度（实现这个代理方法后前面 sectionFooterHeight 设定的高度无效）
+//每个section头部标题高度（实现这个代理方法后前面 通过sectionFooterHeight属性 设定的高度无效）
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 20;
 }
@@ -308,6 +314,8 @@
 
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.tgs removeObjectAtIndex:indexPath.row];
+    [_tableView reloadData];
     NSLog(@"table 删除...");
 }
 
@@ -316,14 +324,22 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+
 }
 
+
+//编辑
+- (void)setEditing:(BOOL)editing animated:(BOOL)animated{
+    
+}
 
 //让行可以移动
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NO;
 }
+
+#pragma mark ScrollViewDelegate
 
 @end
