@@ -342,4 +342,13 @@
 
 #pragma mark ScrollViewDelegate
 
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView{
+
+    
+}
+
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
+    
+}
+
 @end
