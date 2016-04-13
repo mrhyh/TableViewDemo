@@ -72,6 +72,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="dataSource" destination="vXZ-lx-hvc" id="nqK-bX-X10"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="27q-MY-7Ke"/>
                                 </connections>
                             </tableView>
                         </subviews>

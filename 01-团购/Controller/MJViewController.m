@@ -17,6 +17,7 @@
 @property (nonatomic, strong) NSMutableArray *tgs;
 @end
 
+
 @implementation MJViewController
 
 - (void)viewDidLoad
@@ -29,8 +30,11 @@
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
     //设定cell分行线颜色
     [self.tableView setSeparatorColor:[UIColor redColor]];
+
+    
     //编辑tableView
     self.tableView.editing = NO;
+
     //跳到指的row or section
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                         atScrollPosition:UITableViewScrollPositionBottom animated:NO];
@@ -232,17 +236,30 @@
      */
 }
 
+#pragma mark 返回每组尾部说明
+-(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+
+    return @"每组尾部说明";
+}
+
 //用以定制自定义的section头部视图－Header
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if(section == 1){
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
-        headerView.backgroundColor = [UIColor cyanColor];
+        headerView.backgroundColor = [UIColor blueColor];
         return headerView;
     }else {
         return nil;
     }
 }
 
+#pragma mark 侧边栏索引
+-(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
+    NSLog(@"生成组索引");
+    NSArray *indexs=[[NSArray alloc]init];
+    indexs = @[@"A",@"B",@"C"];
+    return indexs;
+}
 
 //用以定制自定义的section底部视图－Footer
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
@@ -265,8 +282,8 @@
     if(section == 0){
         return 100;
     }else{
-        return 100;
-        //return 0.0001; //如果是0就要如此写
+        return 20;
+        //return 0.0001; //设置为极小值，不能设置为0，否者tableView会认为你没有设高度就会采取默认高度
     }
 }
 
@@ -275,23 +292,24 @@
     return 20;
 }
 
-//改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）
+//改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）（每行高度可以不一样）
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section  == 0){
         
         if(indexPath.row == 0){
-            return 70;
+            return 80;
         }else{
-            return 44;
+            return 80;
         }
     }else if (indexPath.section == 1) {
-        return 44;
+        return 80;
     }else if (indexPath.section == 2){
-        return 44;
+        return 80;
     }else{
         return 100;
     }
+    
 }
 
 //移动row时执行
@@ -324,7 +342,10 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    NSLog(@"选中了%ld",(long)indexPath.row);
      [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    // 不加此句时，在二级栏目点击返回时，此行会由选中状态慢慢变成非选中状态。
+    // 加上此句，返回时直接就是非选中状态。
 
 }
 
@@ -340,10 +361,16 @@
     return NO;
 }
 
+#pragma mark 重写状态样式方法
+-(UIStatusBarStyle)preferredStatusBarStyle{
+    return UIStatusBarStyleLightContent;
+}
+
 #pragma mark ScrollViewDelegate
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
-
+    
+    //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性）
     
 }
 
