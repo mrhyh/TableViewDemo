@@ -13,8 +13,11 @@
 #import "MJTgHeaderView.h"
 
 @interface MJViewController () <UITableViewDataSource, MJTgFooterViewDelegate>
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+
+@property (weak,      nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tgs;
+@property (nonatomic, weak)  NSIndexPath *selectedIndexPath;//当前选中的组和行
+
 @end
 
 
@@ -161,6 +164,11 @@
     }
 }
 
+
+
+//-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)方法调用很频繁，无论是初始化、上下滚动、刷新都会调用此方法，所有在这里执行的操作一定要注意性能；
+//可重用标识可以有多个，如果在UITableView中有多类结构不同的Cell，可以通过这个标识进行缓存和重新；
+
 /**
  *  每一行显示怎样的cell
  */
@@ -182,6 +190,26 @@
     //cell.nameText = @"测试NameText"; // 这样就OK了，因为写了它的set方法了！
     
     return cell;
+    
+    /**直接**/
+    /*
+    //NSIndexPath是一个对象，记录了组和行信息
+    NSLog(@"生成单元格(组：%li,行%li)",(long)indexPath.section,(long)indexPath.row);
+    
+    //由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化
+    static NSString *cellIdentifier=@"UITableViewCellIdentifierKey1";
+    //首先根据标识去缓存池取
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    //如果缓存池没有到则重新创建并放到缓存池中
+    if(!cell){
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.textLabel.text=[contact getName];
+    cell.detailTextLabel.text=contact.phoneNumber;
+    NSLog(@"cell:%@",cell);
+    return cell;
+     */
 }
 
 //每个section显示的标题
@@ -342,10 +370,25 @@
 }
 
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     NSLog(@"选中了%ld",(long)indexPath.row);
-     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    _selectedIndexPath = indexPath; //记录选中的组和行
     // 不加此句时，在二级栏目点击返回时，此行会由选中状态慢慢变成非选中状态。
     // 加上此句，返回时直接就是非选中状态。
+    [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    MJTg *didSelectMJTg = self.tgs[indexPath.row];
+    
+
+    //创建弹出窗口
+   
+    UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"修改信息" message:nil  delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    
+    alert.alertViewStyle=UIAlertViewStylePlainTextInput; //设置窗口内容样式
+    UITextField *textField= [alert textFieldAtIndex:0]; //取得文本框
+    textField.text= didSelectMJTg.title; //设置文本框内容
+    alert.tag = indexPath.row;
+    [alert show]; //显示窗口
 
 }
 
@@ -378,4 +421,41 @@
     
 }
 
+
+#pragma mark TextFieldDelegate
+#pragma mark 窗口的代理方法，用户保存数据
+/**
+ *  点击了alertView上面的按钮就会调用这个方法
+ *
+ *  @param buttonIndex 按钮的索引,从0开始
+ */
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+     if (buttonIndex == 0) return;
+    //当点击了第二个按钮（OK）
+    if (buttonIndex==1) {
+        
+        
+        // 1.取得文本框最后的文字
+        NSString *title = [alertView textFieldAtIndex:0].text;
+        
+        // 2.修改模型数据
+        int row = (int)alertView.tag;
+        MJTg *mjTg = self.tgs[row];
+        mjTg.title = title;
+        
+        
+        // 3.告诉tableView重新加载模型数据
+        // reloadData : tableView会向数据源重新请求数据
+        // 重新调用数据源的相应方法取得数据
+        // 重新调用数据源的tableView:numberOfRowsInSection:获得行数
+        // 重新调用数据源的tableView:cellForRowAtIndexPath:得知每一行显示怎样的cell
+        // 全部刷新,改动大时才用
+        //    [self.tableView reloadData];
+
+        
+        // 需要局部刷新的单元格的组、行
+        NSIndexPath *path = [NSIndexPath indexPathForItem:row inSection:_selectedIndexPath.section];
+        [self.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationLeft] ; //后面的参数代码更新时的动画
+    }
+}
 @end
