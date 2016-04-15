@@ -175,6 +175,8 @@
 //一个很基础但你没弄明白的一个问题：1)自定义cell中的所有属性都要写set方法，否则就无法赋值。如果是传的模型，就要写模型的set方法。2)同时，自定义cell也必须有它自己的创建方法
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    //对于cell比较少，有复选功能时选择
+    //NSString *cellIdentifier = [NSString stringWithFormat:@"Cell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
     // 1.创建cell
     MJTgCell *cell = [MJTgCell cellWithTableView:tableView];
     

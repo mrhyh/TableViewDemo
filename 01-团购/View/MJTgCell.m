@@ -23,6 +23,8 @@
 {
      //由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化
     static NSString *ID = @"tg";
+    
+    
     MJTgCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
     if (cell == nil) {
         // 从xib中加载cell
