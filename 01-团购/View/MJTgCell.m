@@ -22,14 +22,21 @@
 + (instancetype)cellWithTableView:(UITableView *)tableView
 {
      //由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化
+    // static修饰局部变量:可以保证局部变量只分配一次存储空间(只初始化一次)
     static NSString *ID = @"tg";
     
-    
+    // 1.通过一个标识去缓存池中寻找可循环利用的cell
+    // dequeue : 出列 (查找)
     MJTgCell *cell = [tableView dequeueReusableCellWithIdentifier:ID];
+    
+    // 2.如果没有可循环利用的cell
     if (cell == nil) {
         // 从xib中加载cell
         cell = [[[NSBundle mainBundle] loadNibNamed:@"MJTgCell" owner:nil options:nil] lastObject];
+        // cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:ID];
     }
+    
+    // 3.给cell设置新的数据
     cell.titleView.text = cell.nameText;
     return cell;
 }

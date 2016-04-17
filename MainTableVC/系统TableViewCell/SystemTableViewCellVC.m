@@ -20,6 +20,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    // 表格的头部控件(直接显示表格的最顶部)
+    self.tableView.tableHeaderView = [UIButton buttonWithType:UIButtonTypeContactAdd];
+    self.tableView.tableFooterView = [[UISwitch alloc] init];
 }
 
 
@@ -62,10 +66,19 @@
     // 取出模型
     MJHero *hero = self.heros[indexPath.row];
     
-    // 设置cell的数据
-    cell.textLabel.text = hero.name;
-    cell.detailTextLabel.text = hero.intro;
-    cell.imageView.image = [UIImage imageNamed:hero.icon];
+    
+    if(indexPath.row % 2 == 0){
+        // 设置cell的数据
+        cell.textLabel.text = hero.name;
+        cell.detailTextLabel.text = hero.intro;
+        cell.imageView.image = [UIImage imageNamed:hero.icon];
+    }else{
+        cell.textLabel.text = @"textLabel";
+        cell.detailTextLabel.text = @"detailTextLabel";
+        //cell.imageView.image = [UIImage imageNamed:hero.icon];
+    }
+    
+    
     
     
     // 设置cell右边指示器的类型

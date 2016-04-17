@@ -149,6 +149,9 @@
 
 //指定每个分区中有多少行，默认为1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    
+
+    NSLog(@"%lu",(unsigned long)self.tgs.count); //用于出发tgs的初始化方法
     switch (section) {
         case 0:
             return 5; //每个分区通常对应不同的数组，返回其元素个数来确定分区的行数
@@ -164,7 +167,12 @@
     }
 }
 
+// 优化的关键代码
+// 离开屏幕的cell会怎样
 
+/**
+ *  每当有一个cell进入视野范围内,就会调用
+ */
 
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)方法调用很频繁，无论是初始化、上下滚动、刷新都会调用此方法，所有在这里执行的操作一定要注意性能；
 //可重用标识可以有多个，如果在UITableView中有多类结构不同的Cell，可以通过这个标识进行缓存和重新；
@@ -284,11 +292,23 @@
 }
 
 #pragma mark 侧边栏索引
+/**
+ *  返回右边索引条显示的字符串数据
+ */
 -(NSArray *)sectionIndexTitlesForTableView:(UITableView *)tableView{
     NSLog(@"生成组索引");
-    NSArray *indexs=[[NSArray alloc]init];
-    indexs = @[@"A",@"B",@"C"];
-    return indexs;
+    
+//    NSArray *indexs=[[NSArray alloc]init];
+//    indexs = @[@"A",@"B",@"C"];
+//    return indexs;
+    
+    return [_tgs valueForKeyPath:@"title"];
+    
+    /*
+     //    MJCarGroup *group = self.groups[0];
+     //    [self.groups valueForKey:@"title"]; //只能取第一级目录，不能找"groups"的次级目录,不要用这个
+     return [self.groups valueForKeyPath:@"title"]; // 可以间接取值，如果"groups"中没有"title"，它会找"groups"的子目录
+     */
 }
 
 //用以定制自定义的section底部视图－Footer
