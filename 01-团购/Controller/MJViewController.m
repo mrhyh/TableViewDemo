@@ -380,11 +380,26 @@
     return indexPath;
 }
 
+#pragma mark 删除操作
+//实现了此方法向左滑动就会显示删除按钮
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tgs removeObjectAtIndex:indexPath.row];
-    [_tableView reloadData];
-    NSLog(@"table 删除...");
+    if (editingStyle==UITableViewCellEditingStyleDelete) {
+        [self.tgs removeObjectAtIndex:indexPath.row];
+        //考虑到性能这里不建议使用reloadData
+        //[_tableView reloadData];
+        
+        //使用下面的方法既可以局部刷新又有动画效果
+        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+        
+        //如果当前组中没有数据则移除组刷新整个表格(以联系人举例)
+//        if (group.contacts.count==0) {
+//            [_contacts removeObject:group];
+//            [tableView reloadData];
+//        }
+        NSLog(@"table 删除...");
+    }
+   
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
