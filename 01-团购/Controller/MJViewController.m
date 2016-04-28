@@ -14,9 +14,10 @@
 
 @interface MJViewController () <UITableViewDataSource, MJTgFooterViewDelegate>
 
-@property (weak,      nonatomic) IBOutlet UITableView *tableView;
+@property (weak,  nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tgs;
 @property (nonatomic, weak)  NSIndexPath *selectedIndexPath;//当前选中的组和行
+@property (nonatomic, assign) BOOL *isInsert;
 
 @end
 
@@ -34,7 +35,6 @@
     //设定cell分行线颜色
     [self.tableView setSeparatorColor:[UIColor redColor]];
 
-    
     //编辑tableView
     self.tableView.editing = NO;
 
@@ -127,7 +127,6 @@
         for (NSDictionary *dict in dictArray) {
             // 3.1.创建模型对象
             MJTg *tg = [MJTg tgWithDict:dict];
-            
             // 3.2.添加模型对象到数组中
             [tgArray addObject:tg];
         }
@@ -150,7 +149,6 @@
 //指定每个分区中有多少行，默认为1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
-
     NSLog(@"%lu",(unsigned long)self.tgs.count); //用于出发tgs的初始化方法
     switch (section) {
         case 0:
@@ -390,6 +388,7 @@
         //[_tableView reloadData];
         
         //使用下面的方法既可以局部刷新又有动画效果
+        //使用这个方法可以再删除之后刷新对应的单元格
         [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
         
         //如果当前组中没有数据则移除组刷新整个表格(以联系人举例)
@@ -399,7 +398,24 @@
 //        }
         NSLog(@"table 删除...");
     }
+    //插入数据并刷新，仅仅参考，代码从别处复制
+//    else if(editingStyle==UITableViewCellEditingStyleInsert){
+//        KCContact *newContact=[[KCContact alloc]init];
+//        newContact.firstName=@"first";
+//        newContact.lastName=@"last";
+//        newContact.phoneNumber=@"12345678901";
+//        [group.contacts insertObject:newContact atIndex:indexPath.row];
+//        [tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];//注意这里没有使用reladData刷新
+//    }
    
+}
+
+#pragma mark 取得当前操作状态，根据不同的状态左侧出现不同的操作按钮
+-(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (_isInsert) {
+        return UITableViewCellEditingStyleInsert;
+    }
+    return UITableViewCellEditingStyleDelete;
 }
 
 - (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -490,9 +506,39 @@
         //    [self.tableView reloadData];
 
         
-        // 需要局部刷新的单元格的组、行
+        // 需要局部刷新的单元格的组、行(刷新指定的分组和行)
         NSIndexPath *path = [NSIndexPath indexPathForItem:row inSection:_selectedIndexPath.section];
         [self.tableView reloadRowsAtIndexPaths:@[path] withRowAnimation:UITableViewRowAnimationLeft] ; //后面的参数代码更新时的动画
     }
 }
+
+#pragma makr 排序
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    //代码仅仅参考
+    //只要实现这个方法在编辑状态右侧就有排序图标
+//    KCContactGroup *sourceGroup =_contacts[sourceIndexPath.section];
+//    KCContact *sourceContact=sourceGroup.contacts[sourceIndexPath.row];
+//    KCContactGroup *destinationGroup =_contacts[destinationIndexPath.section];
+//    
+//    [sourceGroup.contacts removeObject:sourceContact];
+//    if(sourceGroup.contacts.count==0){
+//        [_contacts removeObject:sourceGroup];
+//        [tableView reloadData];
+//    }
+//    
+//    [destinationGroup.contacts insertObject:sourceContact atIndex:destinationIndexPath.row];
+}
+
+#pragma mark TableView所有的刷新
+//通过前面的演示这里简单总结一些UITableView的刷新方法：
+//
+//- (void)reloadData;刷新整个表格。
+//
+//- (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组和行。
+//
+//- (void)reloadSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组。
+//
+//- (void)deleteRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;删除时刷新指定的行数据。
+//
+//- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;添加时刷新指定的行数据。
 @end
