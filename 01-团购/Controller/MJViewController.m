@@ -32,9 +32,10 @@
     self.tableView.rowHeight = 80;
     //设定cell分行线的样式，默认为UITableViewCellSeparatorStyleSingleLine
     [self.tableView setSeparatorStyle:UITableViewCellSeparatorStyleSingleLine];
+    //self.tableView.allowsSelection = NO;
     //设定cell分行线颜色
     [self.tableView setSeparatorColor:[UIColor redColor]];
-
+    self.tableView.separatorInset = UIEdgeInsetsMake(0,80, 0, 80);        // 设置cell端距，这里表示separator离左边和右边均80像素
     //编辑tableView
     self.tableView.editing = NO;
 
@@ -357,7 +358,6 @@
     }else{
         return 100;
     }
-    
 }
 
 //移动row时执行
@@ -383,14 +383,14 @@
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (editingStyle==UITableViewCellEditingStyleDelete) {
-        [self.tgs removeObjectAtIndex:indexPath.row];
+       
         //考虑到性能这里不建议使用reloadData
         //[_tableView reloadData];
         
         //使用下面的方法既可以局部刷新又有动画效果
         //使用这个方法可以再删除之后刷新对应的单元格
         [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
-        
+        [self.tgs removeObjectAtIndex:indexPath.row];
         //如果当前组中没有数据则移除组刷新整个表格(以联系人举例)
 //        if (group.contacts.count==0) {
 //            [_contacts removeObject:group];
@@ -527,6 +527,18 @@
 //    }
 //    
 //    [destinationGroup.contacts insertObject:sourceContact atIndex:destinationIndexPath.row];
+}
+
+#pragma mark 设置cell颜色
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        [cell setBackgroundColor:[UIColor colorWithRed:.8 green:.8 blue:1 alpha:1]];
+    }else {
+        [cell setBackgroundColor:[UIColor clearColor]];
+    }
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
 }
 
 #pragma mark TableView所有的刷新

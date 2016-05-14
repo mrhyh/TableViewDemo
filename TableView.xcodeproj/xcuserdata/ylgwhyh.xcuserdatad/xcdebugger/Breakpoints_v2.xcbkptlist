@@ -20,12 +20,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "01-&#x56e2;&#x8d2d;/Controller/MJViewController.m"
-            timestampString = "482994581.441785"
+            timestampString = "484469248.652345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "311"
-            endingLineNumber = "311"
-            landmarkName = "-sectionIndexTitlesForTableView:"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -36,12 +36,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "01-&#x56e2;&#x8d2d;/Controller/MJViewController.m"
-            timestampString = "482994581.441785"
+            timestampString = "484469393.200922"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "155"
-            endingLineNumber = "155"
-            landmarkName = "-tableView:numberOfRowsInSection:"
+            startingLineNumber = "385"
+            endingLineNumber = "385"
+            landmarkName = "-tableView:commitEditingStyle:forRowAtIndexPath:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

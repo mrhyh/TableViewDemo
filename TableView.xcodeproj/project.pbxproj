@@ -324,6 +324,9 @@
 		EB553C4E1CBFFFC6005F2C92 /* MJHero.m in Sources */ = {isa = PBXBuildFile; fileRef = EB553B231CBFFFC6005F2C92 /* MJHero.m */; };
 		EB553C4F1CBFFFC6005F2C92 /* SystemTableViewCellVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EB553B251CBFFFC6005F2C92 /* SystemTableViewCellVC.m */; };
 		EB814A131C83F8B900F0129C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB814A111C83F8B900F0129C /* Login.storyboard */; };
+		EBB178B81CE75DD100B19479 /* MineMyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */; };
+		EBB178B91CE75DD100B19479 /* MineMyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */; };
+		EBB178BC1CE75E8700B19479 /* MineMyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */; };
 		EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322AB1C9BA8550056C907 /* baseTableViewController.m */; };
 		EBF322CA1C9BA8550056C907 /* MainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B01C9BA8550056C907 /* MainTableVC.m */; };
 		EBF322CB1C9BA8550056C907 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B21C9BA8550056C907 /* MainViewController.m */; };
@@ -676,6 +679,11 @@
 		EB553B241CBFFFC6005F2C92 /* SystemTableViewCellVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SystemTableViewCellVC.h; sourceTree = "<group>"; };
 		EB553B251CBFFFC6005F2C92 /* SystemTableViewCellVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SystemTableViewCellVC.m; sourceTree = "<group>"; };
 		EB814A121C83F8B900F0129C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
+		EBB178B51CE75DD100B19479 /* MineMyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMyOrderCell.h; sourceTree = "<group>"; };
+		EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMyOrderCell.m; sourceTree = "<group>"; };
+		EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineMyOrderCell.xib; sourceTree = "<group>"; };
+		EBB178BA1CE75E8700B19479 /* MineMyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMyOrderModel.h; sourceTree = "<group>"; };
+		EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMyOrderModel.m; sourceTree = "<group>"; };
 		EBF322AA1C9BA8550056C907 /* baseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseTableViewController.h; sourceTree = "<group>"; };
 		EBF322AB1C9BA8550056C907 /* baseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseTableViewController.m; sourceTree = "<group>"; };
 		EBF322AC1C9BA8550056C907 /* ReturnCallBackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnCallBackDelegate.h; sourceTree = "<group>"; };
@@ -738,7 +746,6 @@
 				EBF322D81C9BAAA50056C907 /* MJAppDelegate.m */,
 				EBF323021C9BD8700056C907 /* Common.h */,
 				EB5539941CBFFF4C005F2C92 /* MainTableVC */,
-				EBF323061C9BDB5D0056C907 /* model */,
 				EBF322A81C9BA8550056C907 /* BaseVC */,
 				EBF322AD1C9BA8550056C907 /* Controller */,
 				EBF322B91C9BA8550056C907 /* Model */,
@@ -807,6 +814,9 @@
 		EB12FCD91CBD507F0042DC58 /* Cell集合 */ = {
 			isa = PBXGroup;
 			children = (
+				EBB178B51CE75DD100B19479 /* MineMyOrderCell.h */,
+				EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */,
+				EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */,
 				EB12FCE21CBD60330042DC58 /* DemoCell.h */,
 				EB12FCE31CBD60330042DC58 /* DemoCell.m */,
 				EB12FCE41CBD60330042DC58 /* DemoCell.xib */,
@@ -1982,6 +1992,8 @@
 		EBF322B91C9BA8550056C907 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EBB178BA1CE75E8700B19479 /* MineMyOrderModel.h */,
+				EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */,
 				EBF322BA1C9BA8550056C907 /* MJTg.h */,
 				EBF322BB1C9BA8550056C907 /* MJTg.m */,
 			);
@@ -2014,13 +2026,6 @@
 				EBF322DF1C9BAB0D0056C907 /* MJTVThreeOneVC.m */,
 			);
 			path = TVThree;
-			sourceTree = "<group>";
-		};
-		EBF323061C9BDB5D0056C907 /* model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -2298,6 +2303,7 @@
 				EB553BA51CBFFFC6005F2C92 /* Contents.json in Resources */,
 				EB553B5D1CBFFFC6005F2C92 /* Contents.json in Resources */,
 				EB553C0B1CBFFFC6005F2C92 /* mft@2x.png in Resources */,
+				EBB178B91CE75DD100B19479 /* MineMyOrderCell.xib in Resources */,
 				EB553C421CBFFFC6005F2C92 /* Contents.json in Resources */,
 				EB553C341CBFFFC6005F2C92 /* tm.png in Resources */,
 				EB553C3C1CBFFFC6005F2C92 /* Contents.json in Resources */,
@@ -2435,6 +2441,7 @@
 				EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */,
 				EBF322CF1C9BA8550056C907 /* MJTg.m in Sources */,
 				EBF322D91C9BAAA50056C907 /* MJAppDelegate.m in Sources */,
+				EBB178BC1CE75E8700B19479 /* MineMyOrderModel.m in Sources */,
 				EBF322CA1C9BA8550056C907 /* MainTableVC.m in Sources */,
 				EB553C4E1CBFFFC6005F2C92 /* MJHero.m in Sources */,
 				EBF322D31C9BA8550056C907 /* MJTgFooterView.m in Sources */,
@@ -2445,6 +2452,7 @@
 				EBF322E01C9BAB0D0056C907 /* MJTVThreeOneVC.m in Sources */,
 				EBF322CE1C9BA8550056C907 /* TableViewSelect.m in Sources */,
 				EB553C4F1CBFFFC6005F2C92 /* SystemTableViewCellVC.m in Sources */,
+				EBB178B81CE75DD100B19479 /* MineMyOrderCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
