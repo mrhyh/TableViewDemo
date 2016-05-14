@@ -128,10 +128,10 @@
                                             <rect key="frame" x="0.0" y="0.0" width="287" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableViewOne" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEm-eo-k3b">
-                                                    <rect key="frame" x="89" y="11" width="110" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TableViewTwo-自定义cell" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEm-eo-k3b">
+                                                    <rect key="frame" x="48" y="11" width="193" height="21"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="110" id="Nxm-La-Zyd"/>
+                                                        <constraint firstAttribute="width" constant="193" id="Nxm-La-Zyd"/>
                                                         <constraint firstAttribute="height" constant="21" id="ecM-Rc-ZVz"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -141,7 +141,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="NEm-eo-k3b" firstAttribute="centerY" secondItem="QMb-RW-Y5Z" secondAttribute="centerY" id="IMP-yp-Pmx"/>
-                                                <constraint firstItem="NEm-eo-k3b" firstAttribute="centerX" secondItem="QMb-RW-Y5Z" secondAttribute="centerX" id="L6j-3w-lPb"/>
+                                                <constraint firstItem="NEm-eo-k3b" firstAttribute="centerX" secondItem="QMb-RW-Y5Z" secondAttribute="centerX" constant="1" id="L6j-3w-lPb"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="NEm-eo-k3b" secondAttribute="bottom" constant="3" id="Wem-HX-S6z"/>
                                                 <constraint firstItem="NEm-eo-k3b" firstAttribute="top" secondItem="QMb-RW-Y5Z" secondAttribute="topMargin" constant="3" id="qaD-5v-dIk"/>
                                             </constraints>
@@ -186,6 +186,9 @@
                     <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="Gct-Op-2JT">
                         <autoresizingMask key="autoresizingMask"/>
                     </refreshControl>
+                    <connections>
+                        <outlet property="mainTableView" destination="hix-Sc-ZpX" id="Tjh-jM-M9K"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oZe-C9-ilS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

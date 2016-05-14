@@ -10,16 +10,7 @@
 #import "MineMyOrderModel.h"
 
 @interface MineMyOrderCell()
-@property (weak, nonatomic) IBOutlet UIImageView *iconView;
-@property (weak, nonatomic) IBOutlet UILabel *goodTitleLabel;
-@property (weak, nonatomic) IBOutlet UILabel *goodNumLabel;
 
-@property (weak, nonatomic) IBOutlet UILabel *orderPriceLabel;
-@property (weak, nonatomic) IBOutlet UILabel *tradeStateLabel;
-
-@property (weak, nonatomic) IBOutlet UIButton *buyButton;
-
-@property (weak, nonatomic) IBOutlet UIButton *afterSaleButton;
 
 @end
 

@@ -12,6 +12,17 @@
 
 @interface MineMyOrderCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UIImageView *iconView;
+@property (weak, nonatomic) IBOutlet UILabel *goodTitleLabel;
+@property (weak, nonatomic) IBOutlet UILabel *goodNumLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *orderPriceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *tradeStateLabel;
+
+@property (weak, nonatomic) IBOutlet UIButton *buyButton;
+
+@property (weak, nonatomic) IBOutlet UIButton *afterSaleButton;
+
 /**
  *  通过一个tableView来创建一个cell
  */

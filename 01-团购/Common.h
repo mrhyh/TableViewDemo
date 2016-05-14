@@ -76,6 +76,12 @@
 #define IPHONE_WIDTH ([UIScreen mainScreen].applicationFrame.size.width)
 #define IPHONE_HEIGHT ([UIScreen mainScreen].applicationFrame.size.height) //没状态栏高度
 
+//屏幕 rect
+#define SCREEN_RECT ([UIScreen mainScreen].bounds)
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+#define CONTENT_HEIGHT (SCREEN_HEIGHT - NAVIGATION_BAR_HEIGHT - STATUS_BAR_HEIGHT)
+
 //config
 #define APPWINDOWWIDTH               [UIScreen mainScreen].bounds.size.width
 #define APPWINDOWHEIGHT              [UIScreen mainScreen].bounds.size.height

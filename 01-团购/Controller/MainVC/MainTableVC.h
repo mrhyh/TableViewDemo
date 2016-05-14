@@ -10,5 +10,6 @@
 #import "baseTableViewController.h"
 
 @interface MainTableVC :BaseTableViewController
+@property (strong, nonatomic) IBOutlet UITableView *mainTableView;
 
 @end

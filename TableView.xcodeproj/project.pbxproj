@@ -327,6 +327,7 @@
 		EBB178B81CE75DD100B19479 /* MineMyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */; };
 		EBB178B91CE75DD100B19479 /* MineMyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */; };
 		EBB178BC1CE75E8700B19479 /* MineMyOrderModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */; };
+		EBB178BF1CE763A100B19479 /* TableViewTwoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178BE1CE763A100B19479 /* TableViewTwoVC.m */; };
 		EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322AB1C9BA8550056C907 /* baseTableViewController.m */; };
 		EBF322CA1C9BA8550056C907 /* MainTableVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B01C9BA8550056C907 /* MainTableVC.m */; };
 		EBF322CB1C9BA8550056C907 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B21C9BA8550056C907 /* MainViewController.m */; };
@@ -684,6 +685,8 @@
 		EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MineMyOrderCell.xib; sourceTree = "<group>"; };
 		EBB178BA1CE75E8700B19479 /* MineMyOrderModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMyOrderModel.h; sourceTree = "<group>"; };
 		EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMyOrderModel.m; sourceTree = "<group>"; };
+		EBB178BD1CE763A100B19479 /* TableViewTwoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewTwoVC.h; sourceTree = "<group>"; };
+		EBB178BE1CE763A100B19479 /* TableViewTwoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewTwoVC.m; sourceTree = "<group>"; };
 		EBF322AA1C9BA8550056C907 /* baseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = baseTableViewController.h; sourceTree = "<group>"; };
 		EBF322AB1C9BA8550056C907 /* baseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = baseTableViewController.m; sourceTree = "<group>"; };
 		EBF322AC1C9BA8550056C907 /* ReturnCallBackDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReturnCallBackDelegate.h; sourceTree = "<group>"; };
@@ -1973,6 +1976,8 @@
 				EBF322B61C9BA8550056C907 /* MJViewController.m */,
 				EBF322B71C9BA8550056C907 /* TableViewSelect.h */,
 				EBF322B81C9BA8550056C907 /* TableViewSelect.m */,
+				EBB178BD1CE763A100B19479 /* TableViewTwoVC.h */,
+				EBB178BE1CE763A100B19479 /* TableViewTwoVC.m */,
 			);
 			name = Controller;
 			path = "01-团购/Controller";
@@ -2436,6 +2441,7 @@
 			files = (
 				EBF322CC1C9BA8550056C907 /* MJTableViewThreeVC.m in Sources */,
 				EB12FCE51CBD60330042DC58 /* DemoCell.m in Sources */,
+				EBB178BF1CE763A100B19479 /* TableViewTwoVC.m in Sources */,
 				EBF322CD1C9BA8550056C907 /* MJViewController.m in Sources */,
 				EB12FCDB1CBD50AE0042DC58 /* FollwTableViewCell.m in Sources */,
 				EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */,

@@ -138,14 +138,7 @@
     return _tgs;
 }
 
-#pragma mark - 数据源方法
-/**
- *  一共有多少行数据
- */
-//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-//{
-//    return self.tgs.count;
-//}
+#pragma mark - UITableView数据源方法
 
 //指定每个分区中有多少行，默认为1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
