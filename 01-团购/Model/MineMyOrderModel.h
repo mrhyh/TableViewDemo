@@ -9,22 +9,27 @@
 #import <Foundation/Foundation.h>
 
 @interface MineMyOrderModel : NSObject
+
+/***  图片链接*/
+@property (nonatomic, copy) NSString *iconImageUrlString;
+
 /**
  *  标题
  */
-@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSString *goodTitle;
 /**
  *  价格
  */
-@property (nonatomic, copy) NSString *price;
-/**
- *  图片
- */
-@property (nonatomic, copy) NSString *icon;
+@property (nonatomic, copy) NSString *goodNum;
+
 /**
  *  购买人数
  */
-@property (nonatomic, copy) NSString *buyCount;
+@property (nonatomic, copy) NSString *orderPrice;
+/***  状态*/
+@property (nonatomic, copy) NSString *tradeState;
+
+
 
 + (instancetype)tgWithDict:(NSDictionary *)dict;
 - (instancetype)initWithDict:(NSDictionary *)dict;

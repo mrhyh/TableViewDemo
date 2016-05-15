@@ -6,13 +6,13 @@
 //  Copyright (c) 2014年 itcast. All rights reserved.
 //
 
-#import "MJViewController.h"
+#import "TableViewVC.h"
 #import "MJTg.h"
 #import "MJTgCell.h"
 #import "MJTgFooterView.h"
 #import "MJTgHeaderView.h"
 
-@interface MJViewController () <UITableViewDataSource, MJTgFooterViewDelegate>
+@interface TableViewVC () <UITableViewDataSource, MJTgFooterViewDelegate>
 
 @property (weak,  nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tgs;
@@ -22,7 +22,7 @@
 @end
 
 
-@implementation MJViewController
+@implementation TableViewVC
 
 - (void)viewDidLoad
 {
@@ -84,9 +84,7 @@
 }
 
 #pragma mark - MJTgFooterViewDelegate方法
-/**
- *  加载更多的数据
- */
+#pragma mark 加载更多的数据
 - (void)tgFooterViewDidClickedLoadBtn:(MJTgFooterView *)tgFooterView
 {
     //TODO 正常开发:发送网络请求给远程的服务器
@@ -140,7 +138,7 @@
 
 #pragma mark - UITableView数据源方法
 
-//指定每个分区中有多少行，默认为1
+#pragma mark 每个分区中有多少行,默认为1
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
     NSLog(@"%lu",(unsigned long)self.tgs.count); //用于出发tgs的初始化方法
@@ -159,7 +157,8 @@
     }
 }
 
-// 优化的关键代码
+#pragma mark TableView 优化的关键代码
+
 // 离开屏幕的cell会怎样
 
 /**
@@ -169,9 +168,7 @@
 //-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)方法调用很频繁，无论是初始化、上下滚动、刷新都会调用此方法，所有在这里执行的操作一定要注意性能；
 //可重用标识可以有多个，如果在UITableView中有多类结构不同的Cell，可以通过这个标识进行缓存和重新；
 
-/**
- *  每一行显示怎样的cell
- */
+#pragma mark 每一行显示怎样的cell
 //一个很基础但你没弄明白的一个问题：1)自定义cell中的所有属性都要写set方法，否则就无法赋值。如果是传的模型，就要写模型的set方法。2)同时，自定义cell也必须有它自己的创建方法
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -214,7 +211,7 @@
      */
 }
 
-//每个section显示的标题
+#pragma mark 每个section显示的标题
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
     switch (section) {
         case 0:
@@ -268,11 +265,10 @@
 
 #pragma mark 返回每组尾部说明
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
-
     return @"每组尾部说明";
 }
 
-//用以定制自定义的section头部视图－Header
+#pragma mark 用以定制自定义的section头部视图－Header
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     if(section == 1){
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
@@ -303,22 +299,21 @@
      */
 }
 
-//用以定制自定义的section底部视图－Footer
+#pragma mark 用以定制自定义的section底部视图－Footer
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
     UIImageView *imageView_=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
     imageView_.image=[UIImage imageNamed:@"1000.png"];
     return imageView_;
 }
 
-
-
-//指定有多少个分区(Section)，默认为1
+#pragma mark 指定有多少个分区(Section)，默认为1
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     return 15;//返回标题数组中元素的个数来确定分区的个数
 }
 
-//每个section底部标题高度（实现这个代理方法后前面 通过sectionHeaderHeight属性 设定的高度无效）
+#pragma mark 每个section底部标题高度
+//（实现这个代理方法后前面 通过sectionHeaderHeight属性 设定的高度无效）
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
     if(section == 0){
@@ -329,12 +324,13 @@
     }
 }
 
-//每个section头部标题高度（实现这个代理方法后前面 通过sectionFooterHeight属性 设定的高度无效）
+#pragma mark 每个section头部标题高度
+//（实现这个代理方法后前面 通过sectionFooterHeight属性 设定的高度无效）
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section{
     return 20;
 }
 
-//改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）（每行高度可以不一样）
+#pragma mark 改变行的高度（实现主个代理方法后 rowHeight 设定的高度无效）（每行高度可以不一样）
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if(indexPath.section  == 0){
@@ -353,7 +349,7 @@
     }
 }
 
-//移动row时执行
+#pragma mark 移动row时执行
 -(NSIndexPath *)tableView:(UITableView *)tableView targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)sourceIndexPath toProposedIndexPath:(NSIndexPath *)proposedDestinationIndexPath
 {
     NSLog(@"targetIndexPathForMoveFromRowAtIndexPath");
@@ -364,7 +360,7 @@
     return proposedDestinationIndexPath;
 }
 
-//将取消选中时执行, 也就是上次先中的行
+#pragma mark 将取消选中时执行, 也就是上次先中的行
 -(NSIndexPath *)tableView:(UITableView *)tableView willDeselectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog(@"上次选中的行是  \n indexpath=%@",indexPath);
@@ -411,10 +407,12 @@
     return UITableViewCellEditingStyleDelete;
 }
 
+#pragma mark 删除左滑时显示的文字
 - (NSString *) tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
     return @"删除";
 }
 
+#pragma mark 选中cell时的操作
 - (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     NSLog(@"选中了%ld",(long)indexPath.row);
@@ -444,7 +442,7 @@
     
 }
 
-//让行可以移动
+#pragma mark 让行可以移动
 -(BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
 {
     return NO;
@@ -455,18 +453,72 @@
     return UIStatusBarStyleLightContent;
 }
 
-#pragma mark ScrollViewDelegate
+#pragma mark 排序
+-(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    //代码仅仅参考
+    //只要实现这个方法在编辑状态右侧就有排序图标
+    //    KCContactGroup *sourceGroup =_contacts[sourceIndexPath.section];
+    //    KCContact *sourceContact=sourceGroup.contacts[sourceIndexPath.row];
+    //    KCContactGroup *destinationGroup =_contacts[destinationIndexPath.section];
+    //
+    //    [sourceGroup.contacts removeObject:sourceContact];
+    //    if(sourceGroup.contacts.count==0){
+    //        [_contacts removeObject:sourceGroup];
+    //        [tableView reloadData];
+    //    }
+    //
+    //    [destinationGroup.contacts insertObject:sourceContact atIndex:destinationIndexPath.row];
+}
+
+#pragma mark 设置cell颜色
+- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.row % 2)
+    {
+        [cell setBackgroundColor:[UIColor colorWithRed:.8 green:.8 blue:1 alpha:1]];
+    }else {
+        [cell setBackgroundColor:[UIColor clearColor]];
+    }
+    cell.textLabel.backgroundColor = [UIColor clearColor];
+    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
+}
+
+#pragma mark TableView所有的刷新
+//通过前面的演示这里简单总结一些UITableView的刷新方法：
+//
+//- (void)reloadData;刷新整个表格。
+//
+//- (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组和行。
+//
+//- (void)reloadSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组。
+//
+//- (void)deleteRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;删除时刷新指定的行数据。
+//
+//- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;添加时刷新指定的行数据。
+
+
+#pragma mark ScrollViewDelegate（UITabbleView继承至它）
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
-    //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性）
-    
+    //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性），系统默认分组的时候每组的Header会停留在tableview的顶部
+    if (scrollView == self.tableView)
+    {
+        CGFloat sectionHeaderHeight = 10; //sectionHeaderHeight
+        if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
+            
+            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+            
+        } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+            
+            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+            
+        }
+    }
 }
 
 - (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate{
     
 }
-
 
 #pragma mark TextFieldDelegate
 #pragma mark 窗口的代理方法，用户保存数据
@@ -505,45 +557,5 @@
     }
 }
 
-#pragma makr 排序
--(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
-    //代码仅仅参考
-    //只要实现这个方法在编辑状态右侧就有排序图标
-//    KCContactGroup *sourceGroup =_contacts[sourceIndexPath.section];
-//    KCContact *sourceContact=sourceGroup.contacts[sourceIndexPath.row];
-//    KCContactGroup *destinationGroup =_contacts[destinationIndexPath.section];
-//    
-//    [sourceGroup.contacts removeObject:sourceContact];
-//    if(sourceGroup.contacts.count==0){
-//        [_contacts removeObject:sourceGroup];
-//        [tableView reloadData];
-//    }
-//    
-//    [destinationGroup.contacts insertObject:sourceContact atIndex:destinationIndexPath.row];
-}
 
-#pragma mark 设置cell颜色
-- (void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.row % 2)
-    {
-        [cell setBackgroundColor:[UIColor colorWithRed:.8 green:.8 blue:1 alpha:1]];
-    }else {
-        [cell setBackgroundColor:[UIColor clearColor]];
-    }
-    cell.textLabel.backgroundColor = [UIColor clearColor];
-    cell.detailTextLabel.backgroundColor = [UIColor clearColor];
-}
-
-#pragma mark TableView所有的刷新
-//通过前面的演示这里简单总结一些UITableView的刷新方法：
-//
-//- (void)reloadData;刷新整个表格。
-//
-//- (void)reloadRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组和行。
-//
-//- (void)reloadSections:(NSIndexSet *)sections withRowAnimation:(UITableViewRowAnimation)animation NS_AVAILABLE_IOS(3_0);刷新指定的分组。
-//
-//- (void)deleteRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;删除时刷新指定的行数据。
-//
-//- (void)insertRowsAtIndexPaths:(NSArray *)indexPaths withRowAnimation:(UITableViewRowAnimation)animation;添加时刷新指定的行数据。
 @end

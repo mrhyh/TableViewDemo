@@ -4,9 +4,9 @@
 //
 //  Created by apple on 14-4-1.
 //  Copyright (c) 2014年 itcast. All rights reserved.
-//
+//  UITableView的常用属性
 
 #import <UIKit/UIKit.h>
 
-@interface MJViewController : UIViewController
+@interface TableViewVC : UIViewController
 @end

@@ -22,4 +22,8 @@
     }
     return self;
 }
+
+- (void)setIconImageUrlString:(NSString *)iconImageUrlString{
+    _iconImageUrlString = iconImageUrlString;
+}
 @end

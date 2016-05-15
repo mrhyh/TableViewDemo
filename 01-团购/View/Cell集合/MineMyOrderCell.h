@@ -33,7 +33,7 @@
 /**
  *  团购模型
  */
-@property (nonatomic, strong) MineMyOrderModel *tg;
+@property (nonatomic, strong) MineMyOrderModel *mineMyOrderModel;
 
 @property (nonatomic, strong) NSString *nameText;
 @end

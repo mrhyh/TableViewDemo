@@ -8,6 +8,7 @@
 
 #import "MineMyOrderCell.h"
 #import "MineMyOrderModel.h"
+#import "UIImageView+WebCache.h"
 
 @interface MineMyOrderCell()
 
@@ -42,21 +43,25 @@
     return cell;
 }
 
-- (void)setTg:(MineMyOrderModel *)tg
+
+- (void)setMineMyOrderModel:(MineMyOrderModel *)mineMyOrderModel
 {
-    _tg = tg;
+    _mineMyOrderModel = mineMyOrderModel;
     
     // 1.图片
-    self.iconView.image = [UIImage imageNamed:tg.icon];
+    [self.iconView sd_setImageWithURL:[NSURL URLWithString:mineMyOrderModel.iconImageUrlString] placeholderImage:[UIImage imageNamed:@"me.jpg"]];
     
     // 2.标题
-    self.goodTitleLabel.text = tg.title;
+    self.goodTitleLabel.text = mineMyOrderModel.goodTitle;
     
     // 3.价格
-    self.orderPriceLabel.text = [NSString stringWithFormat:@"￥%@", tg.price];
+    self.orderPriceLabel.text = [NSString stringWithFormat:@"￥%@", mineMyOrderModel.orderPrice];
     
     // 4.购买数
-    self.goodNumLabel.text = [NSString stringWithFormat:@"%@人已购买", tg.buyCount];
+    self.goodNumLabel.text = [NSString stringWithFormat:@"%@人已购买", mineMyOrderModel.goodNum];
+    
+    // 5.购买状态
+    self.tradeStateLabel.text = mineMyOrderModel.tradeState;
 }
 
 - (void) setNameText:(NSString *)nameText{
