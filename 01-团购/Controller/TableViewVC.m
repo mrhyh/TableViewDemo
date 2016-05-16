@@ -38,7 +38,7 @@
     self.tableView.separatorInset = UIEdgeInsetsMake(0,80, 0, 80);        // 设置cell端距，这里表示separator离左边和右边均80像素
     //编辑tableView
     self.tableView.editing = NO;
-
+    self.tableView.allowsSelection = YES;
     //跳到指的row or section
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0]
                         atScrollPosition:UITableViewScrollPositionBottom animated:NO];
@@ -179,6 +179,13 @@
     
     // 2.给cell传递模型数据
     cell.tg = self.tgs[indexPath.row]; //这种有数据显示
+
+#pragma mark 让某一个cell处于选中状态
+    //默认选中某一样
+    if(indexPath.section == 3){
+        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:3];
+        [self.tableView selectRowAtIndexPath:path animated:NO  scrollPosition:UITableViewScrollPositionTop];
+    }
     
     //遇到多次的问题
     // 这样cell就没数据显示:因为MJTgCell中的属性是一个模型（暂时没弄清楚）
