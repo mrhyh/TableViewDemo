@@ -98,26 +98,31 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(indexPath.row == 2){
+        
+    }
+}
+
 #pragma mark ScrollViewDelegate（UITabbleView继承至它）
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
 #warning TODO 这种方式某些特定的时候TableView滚动到顶部时会有一部分进入导航栏被遮住
     //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性），系统默认分组的时候每组的Header会停留在tableview的顶部
-    if (scrollView == self.tableView)
-    {
-        CGFloat sectionHeaderHeight = 15; //sectionHeaderHeight
-        if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
-            
-            //scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
-            scrollView.contentInset = UIEdgeInsetsMake(57, 0, 0, 0);
-        } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
-            
-            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
-            
-        }
-    }
+//    if (scrollView == self.tableView)
+//    {
+//        CGFloat sectionHeaderHeight = 15; //sectionHeaderHeight
+//        if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
+//            
+//            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+//            //scrollView.contentInset = UIEdgeInsetsMake(57, 0, 0, 0);
+//        } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+//            
+//            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+//        }
+//    }
     
-//    //该方法是当scrollView滑动时触发，因为UITableView继承自UIScrollView因此在这里也可以调用
+    //该方法是当scrollView滑动时触发，因为UITableView继承自UIScrollView因此在这里也可以调用
 //    CGFloat header = 15;//这个header其实是section1 的header到顶部的距离
 //    if (scrollView.contentOffset.y<=header&&scrollView.contentOffset.y>=0) {
 //        //当视图滑动的距离小于header时
@@ -128,12 +133,14 @@
 //        scrollView.contentInset = UIEdgeInsetsMake(header+104, 0, 0, 0);
 //    }
 
-}
-
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if(indexPath.row == 2){
-        
+    if (scrollView == self.tableView)
+    {
+        CGFloat sectionHeaderHeight = 15;
+        if (scrollView.contentOffset.y <= sectionHeaderHeight && scrollView.contentOffset.y >= 0) {
+            scrollView.contentInset = UIEdgeInsetsMake(-scrollView.contentOffset.y, 0, 0, 0);
+        } else if (scrollView.contentOffset.y >= sectionHeaderHeight) {
+            scrollView.contentInset = UIEdgeInsetsMake(-sectionHeaderHeight, 0, 0, 0);
+        }
     }
 }
 @end

@@ -47,7 +47,7 @@
     MJTgFooterView *footer = [MJTgFooterView footerView];
     footer.delegate = self;
     self.tableView.tableFooterView = footer;
-    
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);  //这样，tableView滚动到底部时就没有空白了，对于某些时候tableView底部有空白的情况
     // 设置headerView
     self.tableView.tableHeaderView = [MJTgHeaderView headerView];
     
