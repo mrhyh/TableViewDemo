@@ -25,6 +25,14 @@
 		EB12FCE01CBD50B70042DC58 /* me.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB12FCDE1CBD50B70042DC58 /* me.jpg */; };
 		EB12FCE51CBD60330042DC58 /* DemoCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB12FCE31CBD60330042DC58 /* DemoCell.m */; };
 		EB12FCE61CBD60330042DC58 /* DemoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB12FCE41CBD60330042DC58 /* DemoCell.xib */; };
+		EB537F4B1CF5529A00A3029A /* JDLeftRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F461CF5529A00A3029A /* JDLeftRecommendCell.m */; };
+		EB537F4C1CF5529A00A3029A /* JDLeftRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB537F471CF5529A00A3029A /* JDLeftRecommendCell.xib */; };
+		EB537F4D1CF5529A00A3029A /* JDRightRecommendCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F491CF5529A00A3029A /* JDRightRecommendCell.m */; };
+		EB537F4E1CF5529A00A3029A /* JDRightRecommendCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EB537F4A1CF5529A00A3029A /* JDRightRecommendCell.xib */; };
+		EB537F511CF552CB00A3029A /* JDRightRecommendContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F501CF552CB00A3029A /* JDRightRecommendContentModel.m */; };
+		EB537F541CF552F900A3029A /* JDLeftRecommendContentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F531CF552F900A3029A /* JDLeftRecommendContentModel.m */; };
+		EB537F5A1CF5538F00A3029A /* UIBarButtonItem+JDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F571CF5538F00A3029A /* UIBarButtonItem+JDExtension.m */; };
+		EB537F5B1CF5538F00A3029A /* UIView+JDExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = EB537F591CF5538F00A3029A /* UIView+JDExtension.m */; };
 		EB814A131C83F8B900F0129C /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EB814A111C83F8B900F0129C /* Login.storyboard */; };
 		EBB178B81CE75DD100B19479 /* MineMyOrderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */; };
 		EBB178B91CE75DD100B19479 /* MineMyOrderCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBB178B71CE75DD100B19479 /* MineMyOrderCell.xib */; };
@@ -394,6 +402,20 @@
 		EB12FCE21CBD60330042DC58 /* DemoCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoCell.h; sourceTree = "<group>"; };
 		EB12FCE31CBD60330042DC58 /* DemoCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoCell.m; sourceTree = "<group>"; };
 		EB12FCE41CBD60330042DC58 /* DemoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DemoCell.xib; sourceTree = "<group>"; };
+		EB537F451CF5529A00A3029A /* JDLeftRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDLeftRecommendCell.h; sourceTree = "<group>"; };
+		EB537F461CF5529A00A3029A /* JDLeftRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDLeftRecommendCell.m; sourceTree = "<group>"; };
+		EB537F471CF5529A00A3029A /* JDLeftRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDLeftRecommendCell.xib; sourceTree = "<group>"; };
+		EB537F481CF5529A00A3029A /* JDRightRecommendCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDRightRecommendCell.h; sourceTree = "<group>"; };
+		EB537F491CF5529A00A3029A /* JDRightRecommendCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDRightRecommendCell.m; sourceTree = "<group>"; };
+		EB537F4A1CF5529A00A3029A /* JDRightRecommendCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = JDRightRecommendCell.xib; sourceTree = "<group>"; };
+		EB537F4F1CF552CB00A3029A /* JDRightRecommendContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDRightRecommendContentModel.h; sourceTree = "<group>"; };
+		EB537F501CF552CB00A3029A /* JDRightRecommendContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDRightRecommendContentModel.m; sourceTree = "<group>"; };
+		EB537F521CF552F900A3029A /* JDLeftRecommendContentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JDLeftRecommendContentModel.h; sourceTree = "<group>"; };
+		EB537F531CF552F900A3029A /* JDLeftRecommendContentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JDLeftRecommendContentModel.m; sourceTree = "<group>"; };
+		EB537F561CF5538F00A3029A /* UIBarButtonItem+JDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBarButtonItem+JDExtension.h"; sourceTree = "<group>"; };
+		EB537F571CF5538F00A3029A /* UIBarButtonItem+JDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBarButtonItem+JDExtension.m"; sourceTree = "<group>"; };
+		EB537F581CF5538F00A3029A /* UIView+JDExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+JDExtension.h"; sourceTree = "<group>"; };
+		EB537F591CF5538F00A3029A /* UIView+JDExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+JDExtension.m"; sourceTree = "<group>"; };
 		EB814A121C83F8B900F0129C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		EBB178B51CE75DD100B19479 /* MineMyOrderCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineMyOrderCell.h; sourceTree = "<group>"; };
 		EBB178B61CE75DD100B19479 /* MineMyOrderCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineMyOrderCell.m; sourceTree = "<group>"; };
@@ -875,6 +897,30 @@
 				EB12FCDA1CBD50AE0042DC58 /* FollwTableViewCell.m */,
 			);
 			path = "Cell集合";
+			sourceTree = "<group>";
+		};
+		EB537F441CF5529A00A3029A /* 未测试Cell */ = {
+			isa = PBXGroup;
+			children = (
+				EB537F451CF5529A00A3029A /* JDLeftRecommendCell.h */,
+				EB537F461CF5529A00A3029A /* JDLeftRecommendCell.m */,
+				EB537F471CF5529A00A3029A /* JDLeftRecommendCell.xib */,
+				EB537F481CF5529A00A3029A /* JDRightRecommendCell.h */,
+				EB537F491CF5529A00A3029A /* JDRightRecommendCell.m */,
+				EB537F4A1CF5529A00A3029A /* JDRightRecommendCell.xib */,
+			);
+			path = "未测试Cell";
+			sourceTree = "<group>";
+		};
+		EB537F551CF5538F00A3029A /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				EB537F561CF5538F00A3029A /* UIBarButtonItem+JDExtension.h */,
+				EB537F571CF5538F00A3029A /* UIBarButtonItem+JDExtension.m */,
+				EB537F581CF5538F00A3029A /* UIView+JDExtension.h */,
+				EB537F591CF5538F00A3029A /* UIView+JDExtension.m */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		EBB178C01CE850F100B19479 /* 系统TableViewCell */ = {
@@ -1987,6 +2033,7 @@
 		EBB17B841CE8528A00B19479 /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				EB537F551CF5538F00A3029A /* Category */,
 				EBB17B851CE867FC00B19479 /* SDWebImage */,
 			);
 			name = Other;
@@ -2075,6 +2122,10 @@
 		EBF322B91C9BA8550056C907 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EB537F521CF552F900A3029A /* JDLeftRecommendContentModel.h */,
+				EB537F531CF552F900A3029A /* JDLeftRecommendContentModel.m */,
+				EB537F4F1CF552CB00A3029A /* JDRightRecommendContentModel.h */,
+				EB537F501CF552CB00A3029A /* JDRightRecommendContentModel.m */,
 				EBB178BA1CE75E8700B19479 /* MineMyOrderModel.h */,
 				EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */,
 				EBF322BA1C9BA8550056C907 /* MJTg.h */,
@@ -2087,6 +2138,7 @@
 		EBF322BF1C9BA8550056C907 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EB537F441CF5529A00A3029A /* 未测试Cell */,
 				EBB178C01CE850F100B19479 /* 系统TableViewCell */,
 				EB12FCD91CBD507F0042DC58 /* Cell集合 */,
 				EBF322C01C9BA8550056C907 /* MJTgCell.h */,
@@ -2316,6 +2368,7 @@
 				EBB17AD01CE850F100B19479 /* Contents.json in Resources */,
 				EBB17A7E1CE850F100B19479 /* 178647406694副本.png in Resources */,
 				EBB17AB51CE850F100B19479 /* Contents.json in Resources */,
+				EB537F4E1CF5529A00A3029A /* JDRightRecommendCell.xib in Resources */,
 				EBB17AE31CE850F100B19479 /* bb.png in Resources */,
 				EBB17AB01CE850F100B19479 /* 210247356941.png in Resources */,
 				EBB17AD81CE850F100B19479 /* amm@2x.png in Resources */,
@@ -2402,6 +2455,7 @@
 				EBB17B251CE850F100B19479 /* Contents.json in Resources */,
 				EBB17A8D1CE850F100B19479 /* 190833295927@2x.png in Resources */,
 				EBB17B1B1CE850F100B19479 /* kjs@2x.png in Resources */,
+				EB537F4C1CF5529A00A3029A /* JDLeftRecommendCell.xib in Resources */,
 				EBB17A561CE850F100B19479 /* Contents.json in Resources */,
 				EBB17B0C1CE850F100B19479 /* jla@2x.png in Resources */,
 				EBB17A8C1CE850F100B19479 /* 190833295927.png in Resources */,
@@ -2513,17 +2567,23 @@
 				EBB17BAE1CE867FC00B19479 /* SDWebImageManager.m in Sources */,
 				EBB17BAA1CE867FC00B19479 /* SDWebImageCompat.m in Sources */,
 				EBB17BAF1CE867FC00B19479 /* SDWebImagePrefetcher.m in Sources */,
+				EB537F541CF552F900A3029A /* JDLeftRecommendContentModel.m in Sources */,
+				EB537F4D1CF5529A00A3029A /* JDRightRecommendCell.m in Sources */,
 				EB12FCE51CBD60330042DC58 /* DemoCell.m in Sources */,
 				EBB17BA91CE867FC00B19479 /* SDImageCache.m in Sources */,
+				EB537F511CF552CB00A3029A /* JDRightRecommendContentModel.m in Sources */,
 				EBB178BF1CE763A100B19479 /* TableViewTwoVC.m in Sources */,
 				EBB17BB01CE867FC00B19479 /* UIButton+WebCache.m in Sources */,
 				EBB17B831CE8522200B19479 /* MainViewController.m in Sources */,
+				EB537F5A1CF5538F00A3029A /* UIBarButtonItem+JDExtension.m in Sources */,
 				EBB17B7A1CE850F100B19479 /* SystemTableViewCellVC.m in Sources */,
 				EBB17BB31CE867FC00B19479 /* UIImage+WebP.m in Sources */,
 				EBF322CD1C9BA8550056C907 /* TableViewVC.m in Sources */,
+				EB537F5B1CF5538F00A3029A /* UIView+JDExtension.m in Sources */,
 				EB12FCDB1CBD50AE0042DC58 /* FollwTableViewCell.m in Sources */,
 				EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */,
 				EBB17BB11CE867FC00B19479 /* UIImage+GIF.m in Sources */,
+				EB537F4B1CF5529A00A3029A /* JDLeftRecommendCell.m in Sources */,
 				EBB17BB61CE867FC00B19479 /* UIView+WebCacheOperation.m in Sources */,
 				EBF322CF1C9BA8550056C907 /* MJTg.m in Sources */,
 				EBF322D91C9BAAA50056C907 /* MJAppDelegate.m in Sources */,

@@ -14,6 +14,7 @@ typedef NS_ENUM(NSInteger, MainTableViewCell){
     MainTableViewCellTwo = 1,
     MainTableViewCellThree = 2,
     MainTableViewCellFour = 3,
+    MainTableViewCell_Kind = 4, //cell种类
 };
 
 @interface MainTableVC()
@@ -41,6 +42,7 @@ typedef NS_ENUM(NSInteger, MainTableViewCell){
 
 //storyBoard和代码中都可以有跳转，代码中在如下写
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     if(indexPath.row == MainTableViewCellThree){
         TableViewTwoVC *next = [[TableViewTwoVC alloc] init];
         [self.navigationController pushViewController:next animated:YES];

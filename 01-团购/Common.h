@@ -151,3 +151,41 @@
 #define CELLPADDING      16
 //cell内容宽度
 #define CELLCONTENTWIDTH     [UIScreen mainScreen].bounds.size.width - 32
+
+
+
+#ifndef JDProjectHeaders_pch
+#define JDProjectHeaders_pch
+
+/**<------------------------------------------------------------->*/
+
+#import "UIView+JDExtension.h"
+#import "UIBarButtonItem+JDExtension.h"
+
+/**<------------------------------------------------------------->*/
+
+// 随机数：
+#define JDRandomNumber(number) arc4random_uniform(number)
+// 颜色：
+#define JDColor(r, g, b) [UIColor colorWithRed:r green:g blue:b alpha:1.0f]
+#define JDColor2(r, g, b) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0f]
+#define JDRandomColor JDColor(JDRandomNumber(255)/256.0, JDRandomNumber(255)/256.0, JDRandomNumber(255)/256.0)
+#define JDViewControllerBackgroundColor JDColor(223/255.0, 223/255.0, 223/255.0)
+
+/**<------------------------------------------------------------->*/
+
+#define UIScreenWidth [UIScreen mainScreen].bounds.size.width
+#define UIScreenHeight [UIScreen mainScreen].bounds.size.height
+#define UIScreenBounds [UIScreen mainScreen].bounds
+
+/**<------------------------------------------------------------->*/
+
+#ifdef DEBUG // 如果是调试阶段，则JDLog就是NSLog；
+#define JDLog(...) NSLog(__VA_ARGS__)
+#else // 如果是发布阶段，则将JDLog替换为空白。
+#define JDLog(...)
+#endif
+
+/**<------------------------------------------------------------->*/
+
+#endif
