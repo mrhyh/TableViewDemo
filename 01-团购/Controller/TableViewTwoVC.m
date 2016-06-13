@@ -29,8 +29,10 @@
 
 
 - (void)viewDidLoad{
+    
+    self.automaticallyAdjustsScrollViewInsets = NO;
     //_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     //UITableViewStyleGrouped  这种方式创建的TableView，head不会悬停，但是head的最小高度无法自定义了
     //UITableViewStylePlain
     _tableView.delegate = self;

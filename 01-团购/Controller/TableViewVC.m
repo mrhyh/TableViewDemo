@@ -77,10 +77,13 @@
 //    UIView *footerView = [[nib instantiateWithOwner:nil options:nil] lastObject];
 //    self.tableView.tableFooterView = footerView;
     
-    //如果是纯代码写的cell继承类，就要如此注册
+#pragma mark 注册Cell
+    //如果是纯代码写的cell，就要如此注册
     //[self.tableView registerClass:[seatPointCell class] forCellReuseIdentifier:@"seatPointCell12"];
     //如果是xib就像下面这种注册
     //[self.tableView registerNib:[UINib nibWithNibName:@"HYSelectedSeatNextCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
+    
+    
 }
 
 #pragma mark - MJTgFooterViewDelegate方法
@@ -196,7 +199,7 @@
     //cell.nameText = @"测试NameText"; // 这样就OK了，因为写了它的set方法了！
     
     return cell;
-    
+    //GetInfoByCategoryId
     /**直接**/
     /*
     //NSIndexPath是一个对象，记录了组和行信息
@@ -504,7 +507,7 @@
 
 
 #pragma mark ScrollViewDelegate（UITabbleView继承至它）
-
+#pragma mark 这里让Header或Footer随cell滚动或不滚动（TableView有这个属性）
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性），系统默认分组的时候每组的Header会停留在tableview的顶部
