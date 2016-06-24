@@ -180,6 +180,8 @@
     // 1.创建cell
     MJTgCell *cell = [MJTgCell cellWithTableView:tableView];
     
+    //设置cell的选中属性为如下就没有点击效果了
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     // 2.给cell传递模型数据
     cell.tg = self.tgs[indexPath.row]; //这种有数据显示
 
@@ -388,8 +390,25 @@
         
         //使用下面的方法既可以局部刷新又有动画效果
         //使用这个方法可以再删除之后刷新对应的单元格
-        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+#pragma mark 左滑删除 一定要先移除数据源中要删除的数据
         [self.tgs removeObjectAtIndex:indexPath.row];
+        [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
+        
+        #pragma mark 左滑删除,如果section中只有一项，要删除section， 一定要先移除数据源中保存这个section的数据。
+        /*
+        weakSelf.dataArray 是一个二维数据，做一个Demo
+        NSArray *array = weakSelf.dataArray[indexPath.section];
+        if(array.count == 1) {
+            //在UITableView中同时删除row和section
+            [weakSelf.dataArray removeObjectAtIndex:indexPath.section];
+            [weakSelf.tableView deleteSections: [NSIndexSet indexSetWithIndex: indexPath.section] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }else {
+            //删除row
+            [weakSelf.dataArray[indexPath.section] removeObjectAtIndex:indexPath.row];
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }
+         */
+        
         //如果当前组中没有数据则移除组刷新整个表格(以联系人举例)
 //        if (group.contacts.count==0) {
 //            [_contacts removeObject:group];
@@ -560,6 +579,9 @@
         // 全部刷新,改动大时才用
         //    [self.tableView reloadData];
 
+        //section刷新 (section的header、footer、row数据都会刷新)
+        NSIndexSet *indexSet=[[NSIndexSet alloc]initWithIndex:2]; //2是section的值
+        [self.tableView reloadSections:indexSet withRowAnimation:UITableViewRowAnimationAutomatic];
         
         // 需要局部刷新的单元格的组、行(刷新指定的分组和行)
         NSIndexPath *path = [NSIndexPath indexPathForItem:row inSection:_selectedIndexPath.section];

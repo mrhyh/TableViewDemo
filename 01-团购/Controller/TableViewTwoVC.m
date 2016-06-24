@@ -32,7 +32,7 @@
     
     self.automaticallyAdjustsScrollViewInsets = NO;
     //_tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT)];
-    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
+    _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64+10, SCREEN_WIDTH, SCREEN_HEIGHT-64) style:UITableViewStylePlain];
     //UITableViewStyleGrouped  这种方式创建的TableView，head不会悬停，但是head的最小高度无法自定义了
     //UITableViewStylePlain
     _tableView.delegate = self;
@@ -78,12 +78,11 @@
     cell.goodTitleLabel.text = @"商品状态";
     cell.tradeStateLabel.text = @"商品状态";
     
-
-    //默认选中某一样
-    if(indexPath.section == 3){
-        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:3];
-        [self.tableView selectRowAtIndexPath:path animated:NO  scrollPosition:UITableViewScrollPositionTop];
-    }
+#pragma mark /默认选中某一行
+//    if(indexPath.section == 3){
+//        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:3];
+//        [self.tableView selectRowAtIndexPath:path animated:NO  scrollPosition:UITableViewScrollPositionTop];
+//    }
     
     return cell;
 }
