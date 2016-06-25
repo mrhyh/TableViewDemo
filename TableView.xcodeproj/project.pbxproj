@@ -358,7 +358,7 @@
 		EBF322C91C9BA8550056C907 /* baseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322AB1C9BA8550056C907 /* baseTableViewController.m */; };
 		EBF322CD1C9BA8550056C907 /* TableViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B61C9BA8550056C907 /* TableViewVC.m */; };
 		EBF322CE1C9BA8550056C907 /* TableViewSelect.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322B81C9BA8550056C907 /* TableViewSelect.m */; };
-		EBF322CF1C9BA8550056C907 /* MJTg.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322BB1C9BA8550056C907 /* MJTg.m */; };
+		EBF322CF1C9BA8550056C907 /* MJModel.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322BB1C9BA8550056C907 /* MJModel.m */; };
 		EBF322D11C9BA8550056C907 /* MJTgCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322C11C9BA8550056C907 /* MJTgCell.m */; };
 		EBF322D21C9BA8550056C907 /* MJTgCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EBF322C21C9BA8550056C907 /* MJTgCell.xib */; };
 		EBF322D31C9BA8550056C907 /* MJTgFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = EBF322C41C9BA8550056C907 /* MJTgFooterView.m */; };
@@ -770,8 +770,8 @@
 		EBF322B61C9BA8550056C907 /* TableViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewVC.m; sourceTree = "<group>"; };
 		EBF322B71C9BA8550056C907 /* TableViewSelect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewSelect.h; sourceTree = "<group>"; };
 		EBF322B81C9BA8550056C907 /* TableViewSelect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewSelect.m; sourceTree = "<group>"; };
-		EBF322BA1C9BA8550056C907 /* MJTg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTg.h; sourceTree = "<group>"; };
-		EBF322BB1C9BA8550056C907 /* MJTg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTg.m; sourceTree = "<group>"; };
+		EBF322BA1C9BA8550056C907 /* MJModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJModel.h; sourceTree = "<group>"; };
+		EBF322BB1C9BA8550056C907 /* MJModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJModel.m; sourceTree = "<group>"; };
 		EBF322C01C9BA8550056C907 /* MJTgCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJTgCell.h; sourceTree = "<group>"; };
 		EBF322C11C9BA8550056C907 /* MJTgCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MJTgCell.m; sourceTree = "<group>"; };
 		EBF322C21C9BA8550056C907 /* MJTgCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MJTgCell.xib; sourceTree = "<group>"; };
@@ -2128,8 +2128,8 @@
 				EB537F501CF552CB00A3029A /* JDRightRecommendContentModel.m */,
 				EBB178BA1CE75E8700B19479 /* MineMyOrderModel.h */,
 				EBB178BB1CE75E8700B19479 /* MineMyOrderModel.m */,
-				EBF322BA1C9BA8550056C907 /* MJTg.h */,
-				EBF322BB1C9BA8550056C907 /* MJTg.m */,
+				EBF322BA1C9BA8550056C907 /* MJModel.h */,
+				EBF322BB1C9BA8550056C907 /* MJModel.m */,
 			);
 			name = Model;
 			path = "01-团购/Model";
@@ -2585,7 +2585,7 @@
 				EBB17BB11CE867FC00B19479 /* UIImage+GIF.m in Sources */,
 				EB537F4B1CF5529A00A3029A /* JDLeftRecommendCell.m in Sources */,
 				EBB17BB61CE867FC00B19479 /* UIView+WebCacheOperation.m in Sources */,
-				EBF322CF1C9BA8550056C907 /* MJTg.m in Sources */,
+				EBF322CF1C9BA8550056C907 /* MJModel.m in Sources */,
 				EBF322D91C9BAAA50056C907 /* MJAppDelegate.m in Sources */,
 				EBB17BB21CE867FC00B19479 /* UIImage+MultiFormat.m in Sources */,
 				EBB17BAB1CE867FC00B19479 /* SDWebImageDecoder.m in Sources */,

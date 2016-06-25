@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface MJTg : NSObject
+@interface MJModel : NSObject
 /**
  *  标题
  */

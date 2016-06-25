@@ -7,7 +7,7 @@
 //
 
 #import "MJTgCell.h"
-#import "MJTg.h"
+#import "MJModel.h"
 
 @interface MJTgCell()
 @property (weak, nonatomic) IBOutlet UIImageView *iconView;
@@ -41,7 +41,7 @@
     return cell;
 }
 
-- (void)setTg:(MJTg *)tg
+- (void)setTg:(MJModel *)tg
 {
     _tg = tg;
     

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class MJTg;
+@class MJModel;
 
 @interface MJTgCell : UITableViewCell
 
@@ -22,7 +22,7 @@
 /**
  *  团购模型
  */
-@property (nonatomic, strong) MJTg *tg;
+@property (nonatomic, strong) MJModel *tg;
 
 @property (nonatomic, strong) NSString *nameText;
 @end

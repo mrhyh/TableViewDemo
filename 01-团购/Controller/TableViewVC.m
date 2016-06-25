@@ -7,12 +7,14 @@
 //
 
 #import "TableViewVC.h"
-#import "MJTg.h"
+
+#import "MJModel.h"
 #import "MJTgCell.h"
+
 #import "MJTgFooterView.h"
 #import "MJTgHeaderView.h"
 
-@interface TableViewVC () <UITableViewDataSource, MJTgFooterViewDelegate>
+@interface TableViewVC ()  <UITableViewDataSource, MJTgFooterViewDelegate>
 
 @property (weak,  nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) NSMutableArray *tgs;
@@ -47,7 +49,8 @@
     MJTgFooterView *footer = [MJTgFooterView footerView];
     footer.delegate = self;
     self.tableView.tableFooterView = footer;
-    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);  //这样，tableView滚动到底部时就没有空白了，对于某些时候tableView底部有空白的情况
+#pragma mark 去掉tableView滚动到底部时的空白，对于某些时候tableView底部有空白的情况
+    self.tableView.contentInset = UIEdgeInsetsMake(0, 0, 0, 0);
     // 设置headerView
     self.tableView.tableHeaderView = [MJTgHeaderView headerView];
     
@@ -70,9 +73,9 @@
     
 //    UINib *nib = [UINib nibWithNibName:@"MJTgFooterView" bundle:[NSBundle mainBundle]];
     
+#warning mark 从Xib加载View
     // 创建nib对象
 //    UINib *nib = [UINib nibWithNibName:@"MJTgFooterView" bundle:nil];
-//    
 //    // 加载xib\nib
 //    UIView *footerView = [[nib instantiateWithOwner:nil options:nil] lastObject];
 //    self.tableView.tableFooterView = footerView;
@@ -82,8 +85,6 @@
     //[self.tableView registerClass:[seatPointCell class] forCellReuseIdentifier:@"seatPointCell12"];
     //如果是xib就像下面这种注册
     //[self.tableView registerNib:[UINib nibWithNibName:@"HYSelectedSeatNextCell" bundle:nil] forCellReuseIdentifier:@"cell1"];
-    
-    
 }
 
 #pragma mark - MJTgFooterViewDelegate方法
@@ -92,7 +93,7 @@
 {
     //TODO 正常开发:发送网络请求给远程的服务器
     // 1.添加更多的模型数据
-    MJTg *tg = [[MJTg alloc] init];
+    MJModel *tg = [[MJModel alloc] init];
     tg.icon = @"ad_01";
     tg.title = @"新增加的团购数据..";
     tg.price = @"100";
@@ -128,7 +129,7 @@
         NSMutableArray *tgArray = [NSMutableArray array];
         for (NSDictionary *dict in dictArray) {
             // 3.1.创建模型对象
-            MJTg *tg = [MJTg tgWithDict:dict];
+            MJModel *tg = [MJModel tgWithDict:dict];
             // 3.2.添加模型对象到数组中
             [tgArray addObject:tg];
         }
@@ -138,6 +139,7 @@
     }
     return _tgs;
 }
+
 
 #pragma mark - UITableView数据源方法
 
@@ -172,11 +174,12 @@
 //可重用标识可以有多个，如果在UITableView中有多类结构不同的Cell，可以通过这个标识进行缓存和重新；
 
 #pragma mark 每一行显示怎样的cell
-//一个很基础但你没弄明白的一个问题：1)自定义cell中的所有属性都要写set方法，否则就无法赋值。如果是传的模型，就要写模型的set方法。2)同时，自定义cell也必须有它自己的创建方法
+//一个很基础但你没弄明白的一个问题：1)自定义cell中的所有属性都要写set方法，否则可能就无法赋值。如果是传的模型，就要写模型的set方法。2)同时，自定义cell也必须有它自己的创建方法
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    //对于cell比较少，有复选功能时选择
+    //对于cell比较少，有复选功能时选择给每个cell不同的Identifier，当然最好添加一个辅助属性
     //NSString *cellIdentifier = [NSString stringWithFormat:@"Cell%ld%ld", (long)[indexPath section], (long)[indexPath row]];
+#warning mark 自定义Cell
     // 1.创建cell
     MJTgCell *cell = [MJTgCell cellWithTableView:tableView];
     
@@ -186,23 +189,15 @@
     cell.tg = self.tgs[indexPath.row]; //这种有数据显示
 
 #pragma mark 让某一个cell处于选中状态
-    //默认选中某一样
-    if(indexPath.section == 3){
-        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:3];
-        [self.tableView selectRowAtIndexPath:path animated:NO  scrollPosition:UITableViewScrollPositionTop];
-    }
+//    if(indexPath.section == 3){
+//        NSIndexPath *path = [NSIndexPath indexPathForItem:0 inSection:3];
+//        [self.tableView selectRowAtIndexPath:path animated:NO  scrollPosition:UITableViewScrollPositionTop];
+//    }
     
-    //遇到多次的问题
-    // 这样cell就没数据显示:因为MJTgCell中的属性是一个模型（暂时没弄清楚）
-//    cell.tg.title = @"测试";
-//    cell.tg.price = @"测试";
-//    cell.tg.icon = @"测试";
-//    cell.tg.buyCount = @"测试";
-    //cell.nameText = @"测试NameText"; // 这样就OK了，因为写了它的set方法了！
-    
+
     return cell;
-    //GetInfoByCategoryId
-    /**直接**/
+    
+#warning mark 创建系统Cell
     /*
     //NSIndexPath是一个对象，记录了组和行信息
     NSLog(@"生成单元格(组：%li,行%li)",(long)indexPath.section,(long)indexPath.row);
@@ -215,7 +210,6 @@
     if(!cell){
         cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:cellIdentifier];
     }
-    
     cell.textLabel.text=[contact getName];
     cell.detailTextLabel.text=contact.phoneNumber;
     NSLog(@"cell:%@",cell);
@@ -225,6 +219,7 @@
 
 #pragma mark 每个section显示的标题
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
     switch (section) {
         case 0:
             return @"section1";
@@ -233,55 +228,17 @@
         default:
             return [NSString stringWithFormat:@"Unknown%ld",(long)section];
     }
-
-    //static NSString *CellIdentifier = @"Cell";
-    
-    /*
-    //初始化cell并指定其类型，也可自定义cell
-    UITableViewCell *cell = (UITableViewCell*)[tableView  dequeueReusableCellWithIdentifier:CellIdentifier];
-    
-    　　if(cell == nil)
-        
-        　　{
-            
-            　　cell = [[[UITableViewCellalloc]
-                       
-                       　　initWithFrame:CGRectZero
-                       
-                       　　reuseIdentifier:CellIdentifier] autorelease];
-            
-        }
-    
-    　　switch (indexPath.section) {
-            
-            　　case 0: //对应各自的分区
-            
-            　　　　[[cell textLabel]  setText:[dataArray1 objectAtIndex:indexPath.row]]; //给cell添加数据
-            
-            　　　　break;
-            
-            　　case 1:  
-            
-            　　　　[[cell textLabel]  setText:[dataArray2 objectAtIndex:indexPath.row]];  
-            
-            　　　　break;  
-            
-            　　default:  
-            
-            　　　　[[cell textLabel]  setText:@"Unknown"];  
-            
-    }
-    　　return cell; //返回cell
-     */
 }
 
 #pragma mark 返回每组尾部说明
 -(NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    
     return @"每组尾部说明";
 }
 
 #pragma mark 用以定制自定义的section头部视图－Header
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
     if(section == 1){
         UIView *headerView = [[UIView alloc] initWithFrame:CGRectZero];
         headerView.backgroundColor = [UIColor blueColor];
@@ -313,6 +270,7 @@
 
 #pragma mark 用以定制自定义的section底部视图－Footer
 -(UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section{
+    
     UIImageView *imageView_=[[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 320, 20)];
     imageView_.image=[UIImage imageNamed:@"1000.png"];
     return imageView_;
@@ -379,7 +337,7 @@
     return indexPath;
 }
 
-#pragma mark 删除操作
+#pragma mark 左滑删除
 //实现了此方法向左滑动就会显示删除按钮
 - (void) tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -389,7 +347,7 @@
         //[_tableView reloadData];
         
         //使用下面的方法既可以局部刷新又有动画效果
-        //使用这个方法可以再删除之后刷新对应的单元格
+        //使用这个方法可以在删除之后刷新对应的单元格
 #pragma mark 左滑删除 一定要先移除数据源中要删除的数据
         [self.tgs removeObjectAtIndex:indexPath.row];
         [_tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationBottom];
@@ -416,6 +374,7 @@
 //        }
         NSLog(@"table 删除...");
     }
+    
     //插入数据并刷新，仅仅参考，代码从别处复制
 //    else if(editingStyle==UITableViewCellEditingStyleInsert){
 //        KCContact *newContact=[[KCContact alloc]init];
@@ -430,6 +389,7 @@
 
 #pragma mark 取得当前操作状态，根据不同的状态左侧出现不同的操作按钮
 -(UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
     if (_isInsert) {
         return UITableViewCellEditingStyleInsert;
     }
@@ -450,11 +410,9 @@
     // 加上此句，返回时直接就是非选中状态。
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
     
-    MJTg *didSelectMJTg = self.tgs[indexPath.row];
+    MJModel *didSelectMJTg = self.tgs[indexPath.row];
     
-
     //创建弹出窗口
-   
     UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"修改信息" message:nil  delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
     
     alert.alertViewStyle=UIAlertViewStylePlainTextInput; //设置窗口内容样式
@@ -484,6 +442,7 @@
 
 #pragma mark 排序
 -(void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath{
+    
     //代码仅仅参考
     //只要实现这个方法在编辑状态右侧就有排序图标
     //    KCContactGroup *sourceGroup =_contacts[sourceIndexPath.section];
@@ -526,7 +485,7 @@
 
 
 #pragma mark ScrollViewDelegate（UITabbleView继承至它）
-#pragma mark 这里让Header或Footer随cell滚动或不滚动（TableView有这个属性）
+#pragma mark 这里让Header或Footer随cell滚动或不滚动（TableView有这个属性）不过有点问题
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     
     //这里让Header或Footer随cell滚动或不滚动（TableView有这个属性），系统默认分组的时候每组的Header会停留在tableview的顶部
@@ -561,13 +520,12 @@
     //当点击了第二个按钮（OK）
     if (buttonIndex==1) {
         
-        
         // 1.取得文本框最后的文字
         NSString *title = [alertView textFieldAtIndex:0].text;
         
         // 2.修改模型数据
         int row = (int)alertView.tag;
-        MJTg *mjTg = self.tgs[row];
+        MJModel *mjTg = self.tgs[row];
         mjTg.title = title;
         
         

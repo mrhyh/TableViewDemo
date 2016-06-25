@@ -6,9 +6,9 @@
 //  Copyright (c) 2014年 itcast. All rights reserved.
 //
 
-#import "MJTg.h"
+#import "MJModel.h"
 
-@implementation MJTg
+@implementation MJModel
 
 + (instancetype)tgWithDict:(NSDictionary *)dict
 {
