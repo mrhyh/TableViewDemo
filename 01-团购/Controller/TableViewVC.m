@@ -196,8 +196,7 @@
     
 
     return cell;
-    
-#warning mark 创建系统Cell
+#pragma mark  创建系统Cell
     /*
     //NSIndexPath是一个对象，记录了组和行信息
     NSLog(@"生成单元格(组：%li,行%li)",(long)indexPath.section,(long)indexPath.row);
